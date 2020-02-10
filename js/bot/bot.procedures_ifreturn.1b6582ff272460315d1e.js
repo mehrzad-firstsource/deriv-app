@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[23],{235:function(e,i,t){"use strict";t.r(i);var c=t(0);i.default={text:[Object(c.localize)("Used within a function block, this block returns a value when a specific condition is true."),Object(c.localize)("Example:")]}}}]);
-//# sourceMappingURL=bot.procedures_ifreturn.1b6582ff272460315d1e.js.map

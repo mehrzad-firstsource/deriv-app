@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[10],{222:function(e,o,t){"use strict";t.r(o);var c=t(0);o.default={text:[Object(c.localize)("Here is where you can decide to sell your contract before it expires. Only one copy of this block is allowed."),Object(c.localize)("Example:")]}}}]);
-//# sourceMappingURL=bot.during_purchase.2cbcf64fd27f42379db2.js.map

@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[28],{240:function(o,t,e){"use strict";e.r(t);var i=e(0);t.default={text:[Object(i.localize)('This block gives you the potential profit or loss if you decide to sell your contract. It can only be used within the "Sell conditions" root block.'),Object(i.localize)("In the example below, the contract will only be sold if the potential profit or loss is more than the stake.")]}}}]);
-//# sourceMappingURL=bot.sell_price.9d4a5cb4785037196f8e.js.map

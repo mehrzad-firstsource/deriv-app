@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script>
+        try {
+            performance.mark('started');
+            const observer = new PerformanceObserver(function(list) {
+                const perfEntries = list.getEntries();
+                for (let i = 0; i < perfEntries.length; i++) {
+                    const time = Math.round(perfEntries[i].startTime + perfEntries[i].duration);
+                    dataLayer.push({
+                        event: perfEntries[i].name,
+                        duration: time
+                    })
+                }
+            });
+            // register observer for paint timing notifications
+            observer.observe({ entryTypes: ['paint'] });
+        } catch (error) {
+            // ignore error to pervent showing on console
+        }
+    </script>
     <!-- Set skeleton theme color properties -->
     <style>
         :root {
@@ -158,7 +177,7 @@
     <title>Deriv App | Deriv</title>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="g5u3TyEdmYJ_HKZ6EmpW1nlKwD4XPVeLMhN9leeMfuw" />
-<link href="/css/smartcharts.css" rel="stylesheet"><link href="/css/bot.main.css" rel="stylesheet"><link href="/manifest.json" rel="manifest"><link href="/public/images/favicons/apple-touch-icon-114.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-120.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-144.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-152.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-180.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-57.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-60.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-72.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-76.png" rel="icon"><link href="/public/images/favicons/favicon-16.png" rel="icon"><link href="/public/images/favicons/favicon-160.png" rel="icon"><link href="/public/images/favicons/favicon-192.png" rel="icon"><link href="/public/images/favicons/favicon-32.png" rel="icon"><link href="/public/images/favicons/favicon-96.png" rel="icon"><link href="/public/images/favicons/favicon.ico" rel="icon"><link href="/css/core.main.css" rel="stylesheet"></head>
+<link href="/css/smartcharts.css" rel="stylesheet"><link href="/css/bot-web-ui.main.css" rel="stylesheet"><link href="/manifest.json" rel="manifest"><link href="/public/images/favicons/apple-touch-icon-114.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-120.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-144.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-152.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-180.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-57.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-60.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-72.png" rel="icon"><link href="/public/images/favicons/apple-touch-icon-76.png" rel="icon"><link href="/public/images/favicons/favicon-16.png" rel="icon"><link href="/public/images/favicons/favicon-160.png" rel="icon"><link href="/public/images/favicons/favicon-192.png" rel="icon"><link href="/public/images/favicons/favicon-32.png" rel="icon"><link href="/public/images/favicons/favicon-96.png" rel="icon"><link href="/public/images/favicons/favicon.ico" rel="icon"><link href="/css/core.main.css" rel="stylesheet"></head>
 <body class="body theme">
 <!-- Start GTM NoScript -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF7884S"
@@ -199,5 +218,8 @@
     <footer class="footer__loading" style="background: var(--general-main-1); border-top: 1px solid var(--general-section-1); position: fixed; bottom: 0; width: 100%; height: 37px; z-index: 3;"></footer>
 </div>
 <div id="modal_root" class="modal-root"></div>
-<script type="text/javascript" src="/js/core.vendors~main.4060cbce61657b7bde22.js"></script><script type="text/javascript" src="/js/core.main.aeb7fd3799420f7789a6.js"></script></body>
+<script>
+    performance.mark('first-contentful-paint');
+</script>
+<script type="text/javascript" src="/js/core.vendors~main.0a99fcbf82cb712bca93.js"></script><script type="text/javascript" src="/js/core.main.5adedc7423ba67346d9e.js"></script></body>
 </html>

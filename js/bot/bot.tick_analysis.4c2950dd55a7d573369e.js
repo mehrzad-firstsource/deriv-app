@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[32],{244:function(e,t,i){"use strict";i.r(t);var o=i(0);t.default={text:[Object(o.localize)("Any blocks placed within this block will be executed at every tick. If the default candle interval is set to 1 minute in the Trade Parameters root block, the instructions in this block will be executed once every minute. Place this block outside of any root block.")]}}}]);
-//# sourceMappingURL=bot.tick_analysis.4c2950dd55a7d573369e.js.map

@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["icon-hamburger"],{614:function(e,a,n){"use strict";n.r(a);var i=n(5),l=n.n(i),s=n(3),c=n.n(s),t=n(0),o=n.n(t),r=function(e){var a=e.className;return o.a.createElement("svg",{className:l()("inline-icon",a),width:"24",height:"24",viewBox:"0 0 24 24"},o.a.createElement("path",{className:"color1-fill",d:"M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z",fill:"#000",fillRule:"evenodd"}))};r.propTypes={className:c.a.string},a.default=r}}]);
-//# sourceMappingURL=core.icon-hamburger.90fe20392cc18aa739d8.js.map

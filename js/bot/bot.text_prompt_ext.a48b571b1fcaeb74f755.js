@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[31],{243:function(e,t,a){"use strict";a.r(t);var o=a(0);t.default={text:[Object(o.localize)("This block creates a dialog box that uses a customised message to prompt for an input. The input can be either a string of text or a number."),Object(o.localize)("The input can be assigned to a variable to be used in your strategy.")]}}}]);
-//# sourceMappingURL=bot.text_prompt_ext.a48b571b1fcaeb74f755.js.map

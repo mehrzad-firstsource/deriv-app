@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[8],{220:function(e,t,o){"use strict";o.r(t);var a=o(0);t.default={text:[Object(a.localize)("This block evaluates a statement and will perform an action only when the statement is true."),Object(a.localize)("Click the plus icon to extend the functionality of this block."),Object(a.localize)('You can also use "Compare" and "Logic operation" blocks to make test variables.')]}}}]);
-//# sourceMappingURL=bot.controls_if.c95b35427071cb953aba.js.map

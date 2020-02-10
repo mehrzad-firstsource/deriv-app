@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[30],{242:function(e,i,t){"use strict";t.r(i);var s=t(0);i.default={text:[Object(s.localize)("This block displays a modal window with a given message."),Object(s.localize)('Strategy execution is being paused until user clicks "OK"')]}}}]);
-//# sourceMappingURL=bot.text_print.27e306f405293ef94a7a.js.map

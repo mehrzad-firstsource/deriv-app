@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["icon-minimize"],{579:function(e,n,i){"use strict";i.r(n);var a=i(5),l=i.n(a),s=i(3),c=i.n(s),t=i(0),o=i.n(t),r=function(e){var n=e.className;return o.a.createElement("svg",{className:l()("inline-icon",n),width:"16",height:"16",viewBox:"0 0 16 16"},o.a.createElement("path",{className:"color1-fill",fill:"#000",fillOpacity:"0.8",fillRule:"nonzero",d:"M0 7h16v2H0z"}))};r.propTypes={className:c.a.string},n.default=r}}]);
-//# sourceMappingURL=core.icon-minimize.8c87268c44416eb062a2.js.map

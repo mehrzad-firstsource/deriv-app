@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[16],{228:function(e,t,i){"use strict";i.r(t);var o=i(0);t.default={text:[Object(o.localize)("This block performs arithmetic operations between two numbers."),Object(o.localize)("Available operations:"),Object(o.localize)("- Addition"),Object(o.localize)("- Subtraction"),Object(o.localize)("- Multiplication"),Object(o.localize)("- Division"),Object(o.localize)("- Raise the first number to the power of the second number")]}}}]);
-//# sourceMappingURL=bot.math_arithmetic.b4ce8bfbf08be43798a6.js.map

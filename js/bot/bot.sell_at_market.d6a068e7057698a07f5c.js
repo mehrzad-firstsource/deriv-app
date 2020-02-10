@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[27],{239:function(e,t,o){"use strict";o.r(t);var a=o(0);t.default={text:[Object(a.localize)("Use this block to sell your contract at the market price. Selling your contract is optional. You may choose to sell if the market trend is unfavourable."),Object(a.localize)("Example:")]}}}]);
-//# sourceMappingURL=bot.sell_at_market.d6a068e7057698a07f5c.js.map

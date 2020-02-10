@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[34],{246:function(e,t,c){"use strict";c.r(t);var i=c(0);t.default={text:[Object(i.localize)("This block converts the date and time to the number of seconds since the Unix Epoch (1970-01-01 00:00:00)."),Object(i.localize)("Example:"),Object(i.localize)("In this example, a Rise contract will be purchased at midnight on 1 August 2019.")]}}}]);
-//# sourceMappingURL=bot.totimestamp.83bc56c746018fbf8b57.js.map

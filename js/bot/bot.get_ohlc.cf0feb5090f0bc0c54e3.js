@@ -1,2 +1,0 @@
-(window.webpackJsonpderiv_bot=window.webpackJsonpderiv_bot||[]).push([[12],{224:function(e,i,t){"use strict";t.r(i);var a=t(0);i.default={text:[Object(a.localize)("This block gives you a specific candle from within the selected time interval."),Object(a.localize)('In this example, the open price of a candle is assigned to the variable "candle_open_price".'),Object(a.localize)("In the above example it is assumed that variable candle_open_price is processed somewhere within other blocks.")]}}}]);
-//# sourceMappingURL=bot.get_ohlc.cf0feb5090f0bc0c54e3.js.map
