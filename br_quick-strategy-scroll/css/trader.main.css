@@ -877,9 +877,7 @@ html,
   .account__scrollbars_container {
     height: 100%;
     padding-top: 24px;
-    padding-bottom: 64px;
-    padding-left: 16px;
-    padding-right: 16px; }
+    padding-bottom: 64px; }
     .account__scrollbars_container--grid-layout {
       display: grid;
       grid-gap: 4px; }
@@ -890,6 +888,17 @@ html,
         .account__scrollbars_container--grid-layout .dc-dropdown-container .dc-dropdown__display-text,
         .account__scrollbars_container--grid-layout .dc-dropdown-container .dc-list__item-text {
           text-transform: unset; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account__scrollbars_container--grid-layout {
+          padding: 0 1.6rem;
+          overflow-x: hidden;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column; } }
+    @media (min-width: 1024px) {
+      .account__scrollbars_container {
+        padding-left: 16px;
+        padding-right: 16px; } }
   .account-form {
     overflow: hidden;
     height: 100%;
@@ -909,6 +918,9 @@ html,
         width: 100%;
         height: 100%;
         border-top: 1px solid var(--general-section-1); }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account-form__header {
+          margin-top: 1.6rem; } }
     .account-form__title {
       position: absolute;
       padding-right: 8px;
@@ -941,6 +953,13 @@ html,
           color: var(--text-prominent); }
       .account-form__fieldset .dc-input__label {
         top: 1.2rem; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account-form__fieldset .dc-checkbox__box,
+        .account-form__fieldset .dc-checkbox .dc-icon {
+          width: 2.4rem;
+          height: 2.4rem; }
+        .account-form__fieldset .dc-field-error {
+          top: 4.2rem; } }
     .account-form__footer {
       height: 80px;
       position: absolute;
@@ -963,11 +982,35 @@ html,
         line-height: 1.5;
         text-align: right;
         width: 27.6rem; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account-form__footer-note {
+            width: auto;
+            text-align: center; } }
       .account-form__footer-btn {
         height: 4rem;
         margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 1.6rem; }
+        margin-bottom: 0; }
+        @media (min-width: 1024px) {
+          .account-form__footer-btn {
+            margin-left: 1.6rem; } }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account-form__footer-btn {
+            margin: 0 1.6rem; } }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account-form__footer {
+          padding: 16px 0px;
+          flex-direction: column;
+          height: auto;
+          align-items: initial; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account-form__personal-details .account-form__footer-note {
+        font-size: 1rem;
+        height: auto;
+        margin-bottom: 1.6rem; }
+      .account-form__personal-details .dc-checkbox__label {
+        font-size: 1.2rem; }
+      .account-form__personal-details .date-of-birth-datepicker .datepicker-native__input {
+        height: 3.8rem; } }
   .account__intial-loader {
     height: calc(100vh - 240px); }
   .account__text {
@@ -1034,6 +1077,13 @@ html,
     display: flex; }
     .account .account-management-flex-wrapper--space-between {
       justify-content: space-between; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account .account-management-leave-confirm {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1.2rem; }
+      .account .account-management-leave-confirm .dc-btn:first-child {
+        margin-bottom: 1.6rem; } }
   .account .account__text_container {
     margin-top: 12px;
     margin-bottom: 24px; }
@@ -1086,10 +1136,24 @@ html,
     align-items: center; }
   .account .account-limit-info * {
     padding-left: 8px; }
+  .account .leave-confirm__message-icon {
+    width: 93px;
+    height: 93px; }
+  .account .leave-confirm__message {
+    color: var(--text-prominent); }
+  .account .leave-confirm__text {
+    padding: 0 1.9rem; }
   .account-address__details-section {
     margin-top: 0.5em; }
     .account-address__details-section .account-form__fieldset {
       margin-bottom: 3em; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-page-wrapper {
+      height: 100%; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account {
+      height: 100%;
+      margin: 0; } }
 
 /** @define account-poa; weak */
 .account-poa__upload-icon {
@@ -1198,6 +1262,9 @@ html,
   color: var(--text-prominent); }
   .form-submit-error-message p {
     padding-left: 16px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .form-submit-error-message {
+      padding: 0 1.6rem 1rem; } }
 
 /** @define initial-loader; weak */
 .initial-loader--btn .initial-loader__barspinner--rect {
