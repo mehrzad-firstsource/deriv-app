@@ -4160,7 +4160,6 @@
 
 @media (min-width: 320px) and (max-width: 767px) {
   .dc-page-overlay__header-title {
-    color: var(--text-general);
     font-size: 1.6rem; } }
 
 .dc-page-overlay__header-close {
@@ -4168,6 +4167,9 @@
   height: 16px;
   position: absolute;
   right: 0; }
+
+.dc-page-overlay__header-close .dc-icon {
+  --fill-color1: var(--text-prominent); }
 
 @media (min-width: 320px) and (max-width: 767px) {
   .dc-page-overlay__header-close {
@@ -5668,7 +5670,8 @@ html,
 .dc-mobile-dialog__close-btn-icon {
   margin: 1.2rem 0.4rem;
   width: 1.6rem;
-  height: 1.6rem; }
+  height: 1.6rem;
+  --fill-color1: var(--text-prominent) !important; }
 
 /*------------------------------------*
  *  # Constants
@@ -7600,7 +7603,7 @@ html,
   padding: 0 0.4rem;
   font-size: 1.4rem;
   transform: none;
-  background-color: var(--fill-normal);
+  background-color: var(--general-section-2);
   color: var(--text-less-prominent); }
 
 .dc-select-native__placeholder--has-value {
@@ -8534,7 +8537,7 @@ html,
   @media (min-width: 320px) and (max-width: 767px) {
     .terms-of-use {
       overflow-x: hidden;
-      margin: 70px 0 0;
+      margin: 40px 0 0;
       padding: 0 2.4rem 2.4rem;
       overflow-y: auto; }
       .terms-of-use .dc-checkbox__box {

@@ -878,6 +878,9 @@ html,
     height: 100%;
     padding-top: 24px;
     padding-bottom: 64px; }
+    .account__scrollbars_container-wrapper {
+      overflow-x: hidden;
+      overflow-y: auto; }
     .account__scrollbars_container--grid-layout {
       display: grid;
       grid-gap: 4px; }
@@ -899,6 +902,11 @@ html,
       .account__scrollbars_container {
         padding-left: 16px;
         padding-right: 16px; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account__scrollbars_container {
+        height: unset;
+        padding-top: unset;
+        padding-bottom: unset; } }
   .account-form {
     overflow: hidden;
     height: 100%;
@@ -995,7 +1003,9 @@ html,
             margin-left: 1.6rem; } }
         @media (min-width: 320px) and (max-width: 767px) {
           .account-form__footer-btn {
-            margin: 0 1.6rem; } }
+            margin: 0 1.6rem; }
+            .account-form__footer-btn--has-bottom-margin {
+              margin-bottom: 1.6rem; } }
       @media (min-width: 320px) and (max-width: 767px) {
         .account-form__footer {
           padding: 16px 0px;
@@ -1046,15 +1056,28 @@ html,
       display: flex;
       width: 100%;
       height: 100%;
-      margin: 80px 16px 0;
+      margin: 0 16px;
       align-items: center;
       flex-direction: column; }
-      .account .account-management__message-content .dc-btn--link {
-        height: 40px;
-        margin-top: 32px; }
+      .account .account-management__message-content .dc-btn {
+        height: 4rem;
+        margin-top: 3.2rem; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account .account-management__message-content .dc-btn {
+            margin: 1.6rem 0;
+            padding: 1.6rem;
+            width: 100%; } }
     .account .account-management__message-icon {
       width: 128px;
-      height: 128px; }
+      height: 128px;
+      margin-top: 80px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account .account-management__message-icon {
+          margin-top: 4rem;
+          /* iPhone SE screen height fixes due to UI space restrictions */ } }
+  @media only screen and (min-width: 320px) and (max-width: 767px) and (max-height: 480px) {
+    .account .account-management__message-icon {
+      margin-top: 3.2rem; } }
     .account .account-management__message-title {
       font-size: var(--text-size-xs);
       margin-bottom: 1em;
@@ -1064,6 +1087,17 @@ html,
       font-weight: 400;
       text-align: center;
       line-height: 1.5; }
+    .account .account-management__message-wrapper {
+      display: flex;
+      justify-content: center; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account .account-management__message-wrapper {
+          overflow-x: hidden;
+          overflow-y: auto; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-management__message {
+        line-height: 20px;
+        text-align: center; } }
   .account .account-management__text {
     text-align: center;
     color: var(--text-general);
@@ -1176,6 +1210,9 @@ html,
   position: relative; }
   .account-poa__upload-file .dc-file-dropzone {
     max-width: 400px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__upload-file {
+      margin-bottom: 2.4rem; } }
 
 .account-poa__upload-remove-btn {
   position: absolute;
@@ -1219,11 +1256,17 @@ html,
   width: 100%;
   margin-right: 0.5em;
   flex: 1; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__details-description {
+      margin-bottom: 2.4rem; } }
 
 .account-poa__details-text {
   font-size: var(--text-size-xs);
   line-height: 1.5;
   color: var(--text-general); }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__details-text {
+      font-size: 1.2rem; } }
 
 .account-poa__details-fields {
   width: 100%;
@@ -1231,6 +1274,9 @@ html,
   flex: 1; }
   .account-poa__details-fields .account-form__fieldset {
     margin-bottom: 3em; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__details-fields {
+      min-width: 100%; } }
 
 /** @define forgot-password; weak */
 .forgot-password {
@@ -1262,6 +1308,9 @@ html,
   color: var(--text-prominent); }
   .form-submit-error-message p {
     padding-left: 16px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .form-submit-error-message p {
+        line-height: 20px; } }
   @media (min-width: 320px) and (max-width: 767px) {
     .form-submit-error-message {
       padding: 0 1.6rem 1rem; } }
@@ -3808,7 +3857,8 @@ table {
   .send-email-template__subtitle {
     font-size: 1.4rem;
     margin-bottom: 1.6rem;
-    color: var(--text-general); }
+    color: var(--text-general);
+    line-height: 20px; }
   .send-email-template__icon {
     margin-top: 5.6rem;
     margin-bottom: 1.6rem; }
@@ -3818,6 +3868,9 @@ table {
     margin: 3.2rem auto 0; }
   .send-email-template__btn {
     margin: 0 auto; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .send-email-template {
+      margin-bottom: 1.6rem; } }
 
 .contract-drawer {
   width: 240px;
