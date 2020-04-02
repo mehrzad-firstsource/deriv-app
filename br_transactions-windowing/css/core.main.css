@@ -3615,9 +3615,6 @@
   color: var(--text-general);
   background: inherit; }
 
-.dc-table * {
-  background: inherit; }
-
 .dc-table__row {
   display: grid;
   height: 100%; }
@@ -6926,6 +6923,12 @@ html,
     transform: rotate(0deg); }
   .platform-switcher__arrow .color1-fill {
     fill: var(--text-general); }
+  .platform-switcher__preloader {
+    margin-top: 4px;
+    align-self: center;
+    width: 146px; }
+    .platform-switcher__preloader--is-mobile {
+      width: 162px; }
   .platform-switcher--active .platform-switcher__arrow {
     transform: rotate(180deg); }
   @media (min-width: 320px) and (max-width: 767px) {
@@ -7603,7 +7606,7 @@ html,
   padding: 0 0.4rem;
   font-size: 1.4rem;
   transform: none;
-  background-color: var(--fill-normal);
+  background-color: var(--general-section-2);
   color: var(--text-less-prominent); }
 
 .dc-select-native__placeholder--has-value {
@@ -8537,7 +8540,7 @@ html,
   @media (min-width: 320px) and (max-width: 767px) {
     .terms-of-use {
       overflow-x: hidden;
-      margin: 70px 0 0;
+      margin: 40px 0 0;
       padding: 0 2.4rem 2.4rem;
       overflow-y: auto; }
       .terms-of-use .dc-checkbox__box {
