@@ -1006,12 +1006,19 @@ html,
             margin: 0 1.6rem; }
             .account-form__footer-btn--has-bottom-margin {
               margin-bottom: 1.6rem; } }
+      .account-form__footer-all-fields-required {
+        color: var(--text-general);
+        text-align: center;
+        padding-bottom: 2.4rem;
+        padding-top: 0.8rem;
+        font-size: 1.2rem; }
       @media (min-width: 320px) and (max-width: 767px) {
         .account-form__footer {
           padding: 16px 0px;
           flex-direction: column;
           height: auto;
-          align-items: initial; } }
+          align-items: initial;
+          border-top: 2px solid var(--general-section-1); } }
     @media (min-width: 320px) and (max-width: 767px) {
       .account-form__personal-details .account-form__footer-note {
         font-size: 1rem;
@@ -1021,6 +1028,10 @@ html,
         font-size: 1.2rem; }
       .account-form__personal-details .date-of-birth-datepicker .datepicker-native__input {
         height: 3.8rem; } }
+    .account-form__occupation .dc-native-select__select,
+    .account-form__occupation .dc-dropdown__display-text {
+      line-height: 1.6rem;
+      text-align: left; }
   .account__intial-loader {
     height: calc(100vh - 240px); }
   .account__text {
@@ -1112,20 +1123,25 @@ html,
     display: flex; }
     .account .account-management-flex-wrapper--space-between {
       justify-content: space-between; }
+  @media (min-width: 1024px) {
+    .account .account-management-leave-confirm .dc-btn--primary,
+    .account .account-management-submit-success .dc-btn--primary {
+      width: 130px;
+      margin-left: 0.8rem; } }
   @media (min-width: 320px) and (max-width: 767px) {
-    .account .account-management-leave-confirm {
+    .account .account-management-leave-confirm,
+    .account .account-management-submit-success {
       flex-direction: column;
       width: 100%;
       margin-top: 1.2rem; }
-      .account .account-management-leave-confirm .dc-btn:first-child {
-        margin-bottom: 1.6rem; } }
+      .account .account-management-leave-confirm .dc-btn,
+      .account .account-management-submit-success .dc-btn {
+        padding: 0rem;
+        margin-bottom: 0rem; } }
   .account .account__text_container {
-    margin-top: 12px;
-    margin-bottom: 24px; }
+    margin-top: 12px; }
   .account .account-management-table {
-    width: 100%;
-    max-width: 546px;
-    margin-top: 24px; }
+    width: 100%; }
     .account .account-management-table thead {
       position: relative; }
       .account .account-management-table thead tr {
@@ -1138,26 +1154,53 @@ html,
         text-align: left;
         line-height: 1.5;
         color: var(--text-prominent); }
-    .account .account-management-table__divider {
-      position: relative;
-      display: block; }
-      .account .account-management-table__divider th {
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        left: 0px;
-        border-bottom: 2px solid var(--general-section-1); }
-    .account .account-management-table tbody tr {
-      border-bottom: 1px solid var(--general-section-1);
-      padding: 8px 0; }
-      .account .account-management-table tbody tr:first-child {
-        padding-top: 0;
-        padding-bottom: 4px; }
-    .account .account-management-table--last {
-      margin-top: 28px; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account .account-management-table thead th {
+            font-size: 1.2rem;
+            color: var(--text-general); } }
+    .account .account-management-table tbody tr td {
+      border-bottom: 1px solid var(--general-section-1); }
+    @media (min-width: 1024px) {
+      .account .account-management-table {
+        max-width: 546px; } }
   .account .account-limit-container {
     height: 100%;
     width: 100%; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-limit-container-title {
+        padding-bottom: 0.8rem; } }
+    .account .account-limit-container .account-management-table tr th:nth-child(2),
+    .account .account-limit-container .account-management-table tr td:nth-child(2) {
+      text-align: right; }
+    .account .account-limit-container .account-management-table th {
+      padding: 2rem 0 0.8rem;
+      border-bottom: 2px solid var(--general-section-1); }
+    .account .account-limit-container .account-management-table td {
+      line-height: 3.6rem; }
+      .account .account-limit-container .account-management-table td .account-limit-container__extra-info {
+        padding-bottom: 0.8rem; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account .account-limit-container .account-management-table td {
+          line-height: 2.4rem; } }
+    @media (min-width: 1024px) {
+      .account .account-limit-container .account-management-flex-wrapper {
+        align-items: center; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-limit-container .account-management-flex-wrapper {
+        flex-direction: column; } }
+    .account .account-limit-container__extra-info {
+      line-height: 1.4rem;
+      color: var(--text-less-prominent);
+      font-size: 1rem;
+      font-weight: normal; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-limit-container__main-text {
+        margin-top: 2.4rem;
+        font-size: 1.2rem; }
+      .account .account-limit-container__content {
+        padding: 0 0.8rem; }
+      .account .account-limit-container .account__text {
+        font-size: 1rem; } }
   .account .account-limit-popover {
     display: flex;
     align-content: center;
@@ -1171,13 +1214,27 @@ html,
     align-items: center; }
   .account .account-limit-info * {
     padding-left: 8px; }
-  .account .leave-confirm__message-icon {
-    width: 93px;
-    height: 93px; }
-  .account .leave-confirm__message {
-    color: var(--text-prominent); }
-  .account .leave-confirm__text {
-    padding: 0 1.9rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account .leave-confirm__message-icon {
+      width: 93px;
+      height: 93px; }
+    .account .leave-confirm__message {
+      color: var(--text-prominent); }
+    .account .leave-confirm__text {
+      padding: 0 1.9rem; } }
+  .account .submit-success {
+    margin-top: 100px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .submit-success__message-icon {
+        width: 96px;
+        height: 90px; }
+      .account .submit-success__message {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 1.6rem; }
+      .account .submit-success__text {
+        padding: 0 1.9rem;
+        font-size: 1rem; } }
   .account-address__details-section {
     margin-top: 0.5em; }
     .account-address__details-section .account-form__fieldset {
@@ -1185,6 +1242,31 @@ html,
   @media (min-width: 320px) and (max-width: 767px) {
     .account-page-wrapper {
       height: 100%; } }
+  .account__confirmation-page {
+    padding: 2.4rem 1.6rem 0; }
+    .account__confirmation-page-title {
+      color: var(--brand-red-coral);
+      height: 20px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem; }
+    .account__confirmation-page-content {
+      margin-top: 0.8rem;
+      color: var(--text-general);
+      line-height: 1.4rem; }
+    .account__confirmation-page-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 1.6rem;
+      z-index: 4;
+      border-radius: 0 4px 4px 0;
+      border-top: 2px solid var(--general-section-1); }
+      .account__confirmation-page-footer .dc-btn:first-child {
+        margin-bottom: 1.6rem; }
   @media (min-width: 320px) and (max-width: 767px) {
     .account {
       height: 100%;
@@ -1365,6 +1447,14 @@ html,
       text-align: left; }
     .onfido-container .onfido-sdk-ui-PageTitle-subTitle {
       text-align: left; } }
+
+/* stylelint-disable */
+.dc-modal__container_financial-assessment-confirmation {
+  width: 440px; }
+  .dc-modal__container_financial-assessment-confirmation .dc-modal-body {
+    padding-top: 1.2rem; }
+
+/* stylelint-enable */
 
 /*------------------------------------*
  *  # Constants

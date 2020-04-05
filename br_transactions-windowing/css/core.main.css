@@ -3306,7 +3306,10 @@
   .dc-dialog__dialog {
     width: 100vw;
     height: 100vh;
-    min-width: 100vw; } }
+    min-width: 100vw; }
+  .dc-dialog__dialog--has-margin {
+    min-width: unset;
+    width: calc(100vw - 3.2rem); } }
 
 /*------------------------------------*
  *  # Constants
@@ -7540,39 +7543,6 @@ html,
   color: var(--brand-red-coral);
   font-size: var(--text-size-xxs);
   line-height: 1.25; }
-
-.dc-icon {
-  --fill-color1: var(--text-general);
-  --fill-color2: var(--text-less-prominent);
-  --fill-color3: var(--general-section-1); }
-
-.dc-icon--disabled {
-  --fill-color1: var(--text-disabled);
-  --fill-color2: var(--text-disabled); }
-
-.dc-icon--active {
-  --fill-color1: #fff;
-  --fill-color2: #fff; }
-
-.dc-icon--green {
-  --fill-color1: var(--text-profit-success);
-  --fill-color2: var(--text-profit-success);
-  --fill-color3: #fff; }
-
-.dc-icon--red {
-  --fill-color1: var(--text-loss-danger);
-  --fill-color2: var(--text-loss-danger);
-  --fill-color3: #fff; }
-
-.dc-icon--secondary {
-  --fill-color1: var(--text-less-prominent);
-  --fill-color2: var(--text-less-prominent);
-  --fill-color3: #fff; }
-
-.dc-icon--brand {
-  --fill-color1: var(--brand-red-coral);
-  --fill-color2: var(--brand-secondary);
-  --fill-color3: #fff; }
 
 .dc-select-native {
   height: 38px;
