@@ -6277,7 +6277,6 @@ table {
       border-radius: 100%;
       border: 0;
       cursor: pointer;
-      -webkit-transition: box-shadow 0.2s;
       transition: box-shadow 0.2s;
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
       background: var(--state-active); }
@@ -6291,7 +6290,6 @@ table {
       border-radius: 100%;
       border: 0;
       cursor: pointer;
-      -moz-transition: box-shadow 0.2s;
       transition: box-shadow 0.2s;
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
       background: var(--state-active); }
@@ -6304,7 +6302,6 @@ table {
       border-radius: 100%;
       border: 0;
       cursor: pointer;
-      -ms-transition: box-shadow 0.2s;
       transition: box-shadow 0.2s;
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
       background: var(--state-active); }

@@ -1852,25 +1852,21 @@
 .dc-input__field::-webkit-input-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field::-moz-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -moz-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field:-ms-input-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -ms-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field::-ms-input-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -ms-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field::placeholder {
@@ -7131,25 +7127,21 @@ html,
 .dc-input__field::-webkit-input-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field::-moz-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -moz-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field:-ms-input-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -ms-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field::-ms-input-placeholder {
   line-height: 1.5;
   opacity: 0;
-  -ms-transition: opacity 0.25s;
   transition: opacity 0.25s; }
 
 .dc-input__field::placeholder {
