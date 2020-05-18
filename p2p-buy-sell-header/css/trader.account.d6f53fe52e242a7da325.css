@@ -1,0 +1,797 @@
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+.account__inset_header-icon, .account .account-limit-popover {
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */ }
+  .account__inset_header-icon .color1-fill, .account .account-limit-popover .color1-fill {
+    fill: var(--text-general); }
+  .account__inset_header-icon .color1-stroke, .account .account-limit-popover .color1-stroke {
+    stroke: var(--text-general); }
+  .account__inset_header-icon .color2-fill, .account .account-limit-popover .color2-fill {
+    fill: none; }
+  .account__inset_header-icon .color2-stroke, .account .account-limit-popover .color2-stroke {
+    stroke: none; }
+  .active.account__inset_header-icon, .account .active.account-limit-popover {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .active.account__inset_header-icon .color1-fill, .account .active.account-limit-popover .color1-fill {
+      fill: var(--text-prominent); }
+    .active.account__inset_header-icon .color1-stroke, .account .active.account-limit-popover .color1-stroke {
+      stroke: var(--text-prominent); }
+    .active.account__inset_header-icon .color2-fill, .account .active.account-limit-popover .color2-fill {
+      fill: none; }
+    .active.account__inset_header-icon .color2-stroke, .account .active.account-limit-popover .color2-stroke {
+      stroke: none; }
+  .disabled.account__inset_header-icon, .account .disabled.account-limit-popover {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .disabled.account__inset_header-icon .color1-fill, .account .disabled.account-limit-popover .color1-fill {
+      fill: var(--text-disabled); }
+    .disabled.account__inset_header-icon .color1-stroke, .account .disabled.account-limit-popover .color1-stroke {
+      stroke: var(--text-disabled); }
+    .disabled.account__inset_header-icon .color2-fill, .account .disabled.account-limit-popover .color2-fill {
+      fill: none; }
+    .disabled.account__inset_header-icon .color2-stroke, .account .disabled.account-limit-popover .color2-stroke {
+      stroke: none; }
+  .white.account__inset_header-icon, .account .white.account-limit-popover {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .white.account__inset_header-icon .color1-fill, .account .white.account-limit-popover .color1-fill {
+      fill: var(--text-prominent); }
+    .white.account__inset_header-icon .color1-stroke, .account .white.account-limit-popover .color1-stroke {
+      stroke: var(--text-prominent); }
+  .border_hover_color.account__inset_header-icon, .account .border_hover_color.account-limit-popover {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .border_hover_color.account__inset_header-icon .color1-fill, .account .border_hover_color.account-limit-popover .color1-fill {
+      fill: var(--text-prominent); }
+    .border_hover_color.account__inset_header-icon .color1-stroke, .account .border_hover_color.account-limit-popover .color1-stroke {
+      stroke: var(--text-prominent); }
+  .secondary.account__inset_header-icon, .account .secondary.account-limit-popover {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .secondary.account__inset_header-icon .color1-fill, .account .secondary.account-limit-popover .color1-fill {
+      fill: var(--text-less-prominent); }
+    .secondary.account__inset_header-icon .color1-stroke, .account .secondary.account-limit-popover .color1-stroke {
+      stroke: var(--text-less-prominent); }
+
+/**
+ * Define Breakpoints here.
+ */
+.account {
+  margin: 0 16px; }
+  .account .dc-vertical-tab__content {
+    height: calc( 100vh - 48px - 36px - 53px - 2.4rem); }
+  .account .dc-vertical-tab__header--active {
+    border-left: 4px solid var(--brand-red-coral);
+    padding-left: 4.4rem; }
+  .account__inset_header {
+    box-shadow: inset 0 -1px 0 0 var(--general-section-1); }
+    .account__inset_header-subheading {
+      font-size: var(--text-size-xs);
+      line-height: 1.5;
+      margin-right: 8px;
+      color: var(--text-less-prominent); }
+  .account__inset_header-icon {
+    width: 24px;
+    height: 24px; }
+  .account__tab_container {
+    padding: 0 8px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+  .account__scrollbars_container {
+    height: 100%;
+    padding-top: 24px;
+    padding-bottom: 64px; }
+    .account__scrollbars_container-wrapper {
+      overflow-x: hidden;
+      overflow-y: auto; }
+    .account__scrollbars_container--grid-layout {
+      display: grid;
+      grid-gap: 4px; }
+      .account__scrollbars_container--grid-layout .dc-input {
+        margin-bottom: 0; }
+      .account__scrollbars_container--grid-layout .dc-dropdown-container {
+        margin-top: 0; }
+        .account__scrollbars_container--grid-layout .dc-dropdown-container .dc-dropdown__display-text,
+        .account__scrollbars_container--grid-layout .dc-dropdown-container .dc-list__item-text {
+          text-transform: unset; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account__scrollbars_container--grid-layout {
+          padding: 0 1.6rem;
+          overflow-x: hidden;
+          overflow-y: auto;
+          grid-template-rows: 5rem 1fr 4rem 1fr; } }
+    @media (min-width: 1024px) {
+      .account__scrollbars_container {
+        padding-left: 16px;
+        padding-right: 16px; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account__scrollbars_container {
+        height: unset;
+        padding-top: unset;
+        padding-bottom: unset; } }
+  .account-form {
+    overflow: hidden;
+    height: 100%;
+    width: 100%; }
+    .account-form__header {
+      position: relative;
+      font-size: var(--text-size-xs);
+      font-weight: bold;
+      margin-bottom: 1.6em; }
+      .account-form__header:not(:first-child) {
+        margin-top: 1.6em; }
+      .account-form__header:before {
+        content: '';
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid var(--general-section-1); }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account-form__header {
+          margin-top: 1.6rem; } }
+    .account-form__title {
+      position: absolute;
+      padding-right: 8px;
+      color: var(--text-prominent);
+      background: var(--general-main-1); }
+    .account-form__subtitle {
+      padding-left: 8px;
+      font-weight: normal;
+      color: var(--text-prominent); }
+    .account-form__fieldset {
+      position: relative;
+      max-width: 400px;
+      margin-top: 9px;
+      margin-bottom: 18px; }
+      .account-form__fieldset--2-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px; }
+      .account-form__fieldset .datepicker {
+        max-width: unset; }
+        .account-form__fieldset .datepicker__picker {
+          margin-top: 8px; }
+        .account-form__fieldset .datepicker .icon-datepicker {
+          position: absolute;
+          top: 1.2rem;
+          right: 1rem; }
+        .account-form__fieldset .datepicker .calendar__cell--disabled {
+          color: var(--text-disabled) !important; }
+        .account-form__fieldset .datepicker .calendar__cell--other:not(.calendar__cell--today) {
+          color: var(--text-prominent); }
+      .account-form__fieldset .dc-input__label {
+        top: 1.2rem; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account-form__fieldset .dc-checkbox__box,
+        .account-form__fieldset .dc-checkbox .dc-icon {
+          width: 2.4rem;
+          height: 2.4rem; }
+        .account-form__fieldset .dc-field-error {
+          top: 4.2rem; } }
+    .account-form__footer {
+      height: 80px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      width: 100%;
+      padding: 16px 24px;
+      align-items: center;
+      justify-content: flex-end;
+      z-index: 4;
+      border-radius: 0 4px 4px 0;
+      border-top: 1px solid var(--general-section-1);
+      border-width: 1px;
+      background-color: var(--general-main-1); }
+      .account-form__footer-note {
+        color: var(--text-prominent);
+        font-size: var(--text-size-xxs);
+        height: 4rem;
+        line-height: 1.5;
+        text-align: right;
+        width: 27.6rem; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account-form__footer-note {
+            width: auto;
+            text-align: center; } }
+      .account-form__footer-btn {
+        height: 4rem;
+        margin-top: 0;
+        margin-bottom: 0; }
+        @media (min-width: 1024px) {
+          .account-form__footer-btn {
+            margin-left: 1.6rem; } }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account-form__footer-btn {
+            margin: 0 1.6rem; }
+            .account-form__footer-btn--has-bottom-margin {
+              margin-bottom: 1.6rem; } }
+      .account-form__footer-all-fields-required {
+        color: var(--text-general);
+        text-align: center;
+        padding-bottom: 2.4rem;
+        padding-top: 0.8rem;
+        font-size: 1.2rem; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account-form__footer {
+          padding: 16px 0px;
+          flex-direction: column;
+          height: auto;
+          align-items: initial;
+          border-top: 2px solid var(--general-section-1); } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account-form__personal-details .account-form__footer-note {
+        font-size: 1rem;
+        height: auto;
+        margin-bottom: 1.6rem; }
+      .account-form__personal-details .dc-checkbox__label {
+        font-size: 1.2rem; }
+      .account-form__personal-details .dc-select-native__placeholder {
+        background-color: var(--general-main-1); }
+      .account-form__personal-details .date-of-birth-datepicker .datepicker-native__input {
+        height: 3.8rem; } }
+    .account-form__financial-assessment .dc-select-native__placeholder {
+      background-color: var(--general-main-1); }
+    .account-form__occupation .dc-native-select__select,
+    .account-form__occupation .dc-dropdown__display-text {
+      line-height: 1.6rem;
+      text-align: left; }
+  .account__intial-loader {
+    height: calc(100vh - 240px); }
+  .account__text {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.5;
+    color: var(--text-general); }
+    .account__text--small {
+      font-size: 1.2rem;
+      color: var(--text-general);
+      font-weight: 400;
+      text-transform: none;
+      text-align: left;
+      line-height: 1.25; }
+    .account__text--xsmall {
+      font-size: 1rem;
+      color: var(--text-general);
+      font-weight: 400;
+      text-transform: none;
+      text-align: left;
+      line-height: unset; }
+    .account__text--grey {
+      color: var(--text-less-prominent); }
+  .account .account-management__message {
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: var(--text-size-s);
+    color: var(--text-general); }
+    .account .account-management__message-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      margin: 0 16px;
+      align-items: center;
+      flex-direction: column; }
+      .account .account-management__message-content .dc-btn {
+        height: 4rem;
+        margin-top: 3.2rem; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account .account-management__message-content .dc-btn {
+            margin: 1.6rem 0;
+            padding: 1.6rem;
+            width: 100%; } }
+    .account .account-management__message-icon {
+      width: 128px;
+      height: 128px;
+      margin-top: 80px; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account .account-management__message-icon {
+          margin-top: 4rem;
+          /* iPhone SE screen height fixes due to UI space restrictions */ } }
+  @media only screen and (min-width: 320px) and (max-width: 767px) and (max-height: 480px) {
+    .account .account-management__message-icon {
+      margin-top: 3.2rem; } }
+    .account .account-management__message-title {
+      font-size: var(--text-size-xs);
+      margin-bottom: 1em;
+      text-align: center; }
+    .account .account-management__message-subtitle {
+      font-size: var(--text-size-xxs);
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.5; }
+    .account .account-management__message-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account .account-management__message-wrapper {
+          overflow-x: hidden;
+          overflow-y: auto; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-management__message {
+        line-height: 20px;
+        text-align: center; } }
+  .account .account-management__text {
+    text-align: center;
+    color: var(--text-general);
+    font-size: var(--text-size-xs);
+    line-height: 1.5; }
+  .account .account-management__text-container {
+    margin-top: 10px;
+    max-width: 467px;
+    margin-bottom: 2em; }
+  .account .account-management-flex-wrapper {
+    display: flex; }
+    .account .account-management-flex-wrapper--space-between {
+      justify-content: space-between; }
+  @media (min-width: 1024px) {
+    .account .account-management-leave-confirm .dc-btn--primary,
+    .account .account-management-submit-success .dc-btn--primary {
+      width: 130px;
+      margin-left: 0.8rem; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account .account-management-leave-confirm,
+    .account .account-management-submit-success {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1.2rem; }
+      .account .account-management-leave-confirm .dc-btn,
+      .account .account-management-submit-success .dc-btn {
+        padding: 0rem;
+        margin-bottom: 0rem; } }
+  .account .account__text_container {
+    margin-top: 12px; }
+  .account .account-management-table {
+    width: 100%; }
+    .account .account-management-table thead {
+      position: relative; }
+      .account .account-management-table thead tr {
+        padding-bottom: 8px; }
+      .account .account-management-table thead th {
+        font-size: 1.4rem;
+        color: var(--text-general);
+        font-weight: 700;
+        text-transform: none;
+        text-align: left;
+        line-height: 1.5;
+        color: var(--text-prominent); }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .account .account-management-table thead th {
+            font-size: 1.2rem;
+            color: var(--text-general); } }
+    .account .account-management-table tbody tr td {
+      border-bottom: 1px solid var(--general-section-1); }
+    @media (min-width: 1024px) {
+      .account .account-management-table {
+        max-width: 546px; } }
+  .account .account-limit-container {
+    height: 100%;
+    width: 100%; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-limit-container-title {
+        padding-bottom: 0.8rem; } }
+    .account .account-limit-container .account-management-table tr th:nth-child(2),
+    .account .account-limit-container .account-management-table tr td:nth-child(2) {
+      text-align: right; }
+    .account .account-limit-container .account-management-table th {
+      padding: 2rem 0 0.8rem;
+      border-bottom: 2px solid var(--general-section-1); }
+    .account .account-limit-container .account-management-table td {
+      line-height: 3.6rem; }
+      .account .account-limit-container .account-management-table td .account-limit-container__extra-info {
+        padding-bottom: 0.8rem; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .account .account-limit-container .account-management-table td {
+          line-height: 2.4rem; } }
+    @media (min-width: 1024px) {
+      .account .account-limit-container .account-management-flex-wrapper {
+        align-items: center; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-limit-container .account-management-flex-wrapper {
+        flex-direction: column; } }
+    .account .account-limit-container__extra-info {
+      line-height: 1.4rem;
+      color: var(--text-less-prominent);
+      font-size: 1rem;
+      font-weight: normal; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .account-limit-container__main-text {
+        margin-top: 2.4rem;
+        font-size: 1.2rem; }
+      .account .account-limit-container__content {
+        padding: 0 0.8rem; }
+      .account .account-limit-container .account__text {
+        font-size: 1rem; } }
+  .account .account-limit-popover {
+    display: flex;
+    align-content: center;
+    padding-left: 4px; }
+  .account .account-limit-popover-target {
+    height: 100%;
+    display: flex;
+    align-items: center; }
+  .account .account-limit-info__inset_header {
+    display: flex;
+    align-items: center; }
+  .account .account-limit-info * {
+    padding-left: 8px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account .leave-confirm__message-icon {
+      width: 93px; }
+    .account .leave-confirm__message {
+      color: var(--text-prominent); }
+    .account .leave-confirm__text {
+      padding: 0 1.9rem; } }
+  .account .submit-success {
+    margin-top: 100px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .account .submit-success__message-icon {
+        width: 96px;
+        height: 90px; }
+      .account .submit-success__message {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 1.6rem; }
+      .account .submit-success__text {
+        padding: 0 1.9rem;
+        font-size: 1rem; } }
+  .account-address__details-section {
+    margin-top: 0.5em; }
+    .account-address__details-section .account-form__fieldset {
+      margin-bottom: 3em; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-page-wrapper {
+      height: 100%; } }
+  .account__confirmation-page {
+    padding: 2.4rem 1.6rem 0; }
+    .account__confirmation-page-title {
+      color: var(--brand-red-coral);
+      height: 20px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.8rem; }
+    .account__confirmation-page-content {
+      margin-top: 0.8rem;
+      color: var(--text-general);
+      line-height: 1.4rem; }
+    .account__confirmation-page-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 1.6rem;
+      z-index: 4;
+      border-radius: 0 4px 4px 0;
+      border-top: 2px solid var(--general-section-1); }
+      .account__confirmation-page-footer .dc-btn:first-child {
+        margin-bottom: 1.6rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account {
+      height: 100%;
+      margin: 0; } }
+
+/** @define account-poa; weak */
+.account-poa__upload-icon {
+  width: 25px; }
+
+.account-poa__upload-section {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap; }
+
+.account-poa__upload-list {
+  width: 100%;
+  flex: 1;
+  margin-right: 16px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__upload-list {
+      flex: unset;
+      margin-right: 0; } }
+
+.account-poa__upload-file {
+  width: 100%;
+  flex: 1;
+  height: 240px;
+  position: relative; }
+  .account-poa__upload-file .dc-file-dropzone {
+    max-width: 400px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__upload-file {
+      flex: unset;
+      margin-bottom: 2.4rem; } }
+
+.account-poa__upload-remove-btn {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  transition: transform 0.25s linear; }
+  .account-poa__upload-remove-btn:hover {
+    transform: scale(1.25, 1.25); }
+  .account-poa__upload-remove-btn--error circle {
+    fill: var(--status-danger); }
+  .account-poa__upload-remove-btn-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.account-poa__upload-box {
+  display: flex;
+  margin-bottom: 2em;
+  align-items: center;
+  justify-content: flex-start; }
+
+.account-poa__upload-item {
+  min-width: 238px;
+  width: 100%;
+  margin-left: 1em;
+  font-size: var(--text-size-xxs);
+  line-height: 1.5;
+  color: var(--text-prominent); }
+
+.account-poa__details-section {
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap; }
+
+.account-poa__details-description {
+  width: 100%;
+  margin-right: 0.5em;
+  flex: 1; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__details-description {
+      margin-bottom: 2.4rem; } }
+
+.account-poa__details-text {
+  font-size: var(--text-size-xs);
+  line-height: 1.5;
+  color: var(--text-general); }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__details-text {
+      font-size: 1.2rem; } }
+
+.account-poa__details-fields {
+  width: 100%;
+  min-width: 400px;
+  flex: 1; }
+  .account-poa__details-fields .account-form__fieldset {
+    margin-bottom: 3em; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-poa__details-fields {
+      min-width: 100%; } }
+
+/** @define forgot-password; weak */
+.forgot-password {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 16px;
+  max-width: 400px;
+  margin: 24px auto 0;
+  color: var(--text-prominent);
+  font-size: var(--text-size-xxs);
+  line-height: 1.5; }
+  .forgot-password__content {
+    display: grid;
+    grid-template-columns: 32px auto;
+    grid-gap: 8px; }
+    .forgot-password__content .inline-icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px; }
+
+/** @define form-submit-error-message; weak */
+.form-submit-error-message {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  font-size: var(--text-size-xxs);
+  font-weight: bold;
+  flex: 1;
+  color: var(--text-prominent); }
+  .form-submit-error-message p {
+    padding-left: 16px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .form-submit-error-message p {
+        line-height: 20px; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .form-submit-error-message {
+      padding: 0 1.6rem 1rem; } }
+
+/** @define initial-loader; weak */
+.initial-loader--btn .initial-loader__barspinner--rect {
+  background-color: var(--text-colored-background); }
+
+.initial-loader--btn .barspinner {
+  margin: 0 4px 0 -4px; }
+
+/** @define poi-icon-row; weak */
+.poi-icon-row {
+  display: flex;
+  margin-bottom: 16px; }
+  .poi-icon-row__icon-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-less-prominent); }
+    .poi-icon-row__icon-container:not(:first-child):not(:last-child) {
+      margin: 0 40px; }
+    .poi-icon-row__icon-container p {
+      font-size: var(--text-size-xxs); }
+    .poi-icon-row__icon-container p:first-of-type {
+      line-height: 1.5;
+      margin-top: 8px;
+      font-weight: bold; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .poi-icon-row__icon-container:not(:first-child):not(:last-child) {
+        margin: 0; }
+      .poi-icon-row__icon-container .dc-icon {
+        width: 8.8rem;
+        height: auto; }
+      .poi-icon-row__icon-container p {
+        line-height: 20px; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .poi-icon-row {
+      display: grid;
+      grid-gap: 2.4rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 4rem; } }
+
+/** @define onfido-container; weak */
+.onfido-container {
+  margin-top: 24px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .onfido-container {
+      margin-top: 0; }
+      .onfido-container .onfido-sdk-ui-PageTitle-titleWrapper {
+        margin: 0 1.5em 0.4em; }
+      .onfido-container .onfido-sdk-ui-PageTitle-title {
+        text-align: left; }
+      .onfido-container .onfido-sdk-ui-PageTitle-subTitle {
+        text-align: left; } }
+
+/* stylelint-disable */
+.dc-modal__container_financial-assessment-confirmation {
+  width: 440px; }
+  .dc-modal__container_financial-assessment-confirmation .dc-modal-body {
+    padding-top: 1.2rem; }
+
+.dc-modal .leave-confirm__message-content {
+  text-align: center; }
+
+.dc-modal .leave-confirm__message-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.4rem; }
+
+.dc-modal .leave-confirm__message {
+  margin-bottom: 0.8rem;
+  font-weight: bold; }
+
+.dc-modal .account-management-leave-confirm {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.4rem; }
+  .dc-modal .account-management-leave-confirm :first-child {
+    margin-right: 0.8rem; }
+
+/* stylelint-enable */
+/** @define proof-of-identity */
+.proof-of-identity {
+  height: 100%; }
+
