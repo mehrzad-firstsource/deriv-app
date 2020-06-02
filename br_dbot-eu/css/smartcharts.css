@@ -58,7 +58,7 @@ html,body{-ms-touch-action:none;margin:0px}
 .smartcharts-light .ciq-chart{background:#fff}
 .smartcharts-dark .ciq-chart{background:#0e0e0e}
 .ciq-chart.ciq-screenshot .cq-menu-dropdown,.ciq-chart.ciq-screenshot .sc-toolbar-widget,.ciq-chart.ciq-screenshot .ciq-navigation-widget,.ciq-chart.ciq-screenshot .stx_jump_today.home{display:none !important}
-.ciq-chart.ciq-screenshot .sc-studies-list .stx-btn-panel,.ciq-chart.ciq-screenshot .sc-studies-list .stx-btn-panel{display:none !important}
+.ciq-chart.ciq-screenshot .sc-studies-list .stx-btn-panel{display:none !important}
 .cq-chart-control-left .stx-panel-control{left:10px}
 .cq-chart-control-left .chartContainer{width:calc(100% - 100px);margin-left:100px}
 .sharing .ciq-no-share{display:none !important;left:-9999px !important}
@@ -281,9 +281,9 @@ html,body{-ms-touch-action:none;margin:0px}
 .smartcharts input{font-weight:300;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
 .smartcharts-light .smartcharts input{color:#7f8397;background-color:#fff}
 .smartcharts-dark .smartcharts input{color:#fff;background-color:#0e0e0e}
-.smartcharts-light .smartcharts input::-moz-placeholder,.smartcharts-light .smartcharts input::-moz-placeholder{color:#7f8397}
+.smartcharts-light .smartcharts input::-moz-placeholder{color:#7f8397}
 .smartcharts-light .smartcharts input::placeholder,.smartcharts-light .smartcharts input::-moz-placeholder{color:#7f8397}
-.smartcharts-dark .smartcharts input::-moz-placeholder,.smartcharts-dark .smartcharts input::-moz-placeholder{color:#fff}
+.smartcharts-dark .smartcharts input::-moz-placeholder{color:#fff}
 .smartcharts-dark .smartcharts input::placeholder,.smartcharts-dark .smartcharts input::-moz-placeholder{color:#fff}
 .smartcharts div,.smartcharts li,.smartcharts span,.smartcharts a{-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent}
 .smartcharts .cq-top-ui-widgets{position:absolute;z-index:5;margin:0.2em 0.5em;width:100%;pointer-events:none}
@@ -391,9 +391,9 @@ html,body{-ms-touch-action:none;margin:0px}
 .sc-input{border-radius:4px 0 0 4px;height:40px;box-sizing:border-box;border-right:none !important;position:relative;outline:none !important;padding:10px 12px;font-size:14px;font-weight:normal;font-style:normal;line-height:1.43;letter-spacing:normal;background:transparent}
 .smartcharts-light .sc-input{border:1px solid #d6dadb}
 .smartcharts-dark .sc-input{border:1px solid #323738}
-.sc-input::-moz-placeholder,.sc-input::-moz-placeholder{font-size:14px}
+.sc-input::-moz-placeholder{font-size:14px}
 .sc-input::placeholder,.sc-input::-moz-placeholder{font-size:14px}
-.smartcharts-light .sc-input::-moz-placeholder,.smartcharts-light .sc-input::-moz-placeholder{color:#999}
+.smartcharts-light .sc-input::-moz-placeholder{color:#999}
 .smartcharts-light .sc-input::placeholder,.smartcharts-light .sc-input::-moz-placeholder{color:#999}
 .smartcharts-light .sc-input:hover{border-color:#999}
 .smartcharts-dark .sc-input:hover{border-color:#6e6e6e}
