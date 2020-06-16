@@ -1,0 +1,524 @@
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+.dc-icon {
+  --fill-color1: var(--text-general);
+  --fill-color2: var(--text-less-prominent);
+  --fill-color3: var(--general-section-1); }
+
+.dc-icon--disabled {
+  --fill-color1: var(--text-disabled);
+  --fill-color2: var(--text-disabled); }
+
+.dc-icon--active {
+  --fill-color1: #fff;
+  --fill-color2: #fff; }
+
+.dc-icon--green {
+  --fill-color1: var(--text-profit-success);
+  --fill-color2: var(--text-profit-success);
+  --fill-color3: #fff; }
+
+.dc-icon--red {
+  --fill-color1: var(--text-loss-danger);
+  --fill-color2: var(--text-loss-danger);
+  --fill-color3: #fff; }
+
+.dc-icon--secondary {
+  --fill-color1: var(--text-less-prominent);
+  --fill-color2: var(--text-less-prominent);
+  --fill-color3: #fff; }
+
+.dc-icon--brand {
+  --fill-color1: var(--brand-red-coral);
+  --fill-color2: var(--brand-secondary);
+  --fill-color3: #fff; }
+
+.dc-field-error {
+  position: absolute;
+  top: 4rem;
+  text-align: left !important;
+  padding-top: 0.4rem;
+  padding-left: 1.2rem;
+  color: var(--brand-red-coral);
+  font-size: var(--text-size-xxs);
+  line-height: 1.25; }
+
+.dc-input {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border-normal);
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.2rem;
+  line-height: 1.43; }
+
+.dc-input:hover:not(.dc-input__disabled) {
+  border-color: var(--border-hover); }
+
+.dc-input[focus-within] {
+  border-color: var(--brand-secondary); }
+
+.dc-input:focus-within {
+  border-color: var(--brand-secondary); }
+
+.dc-input[focus-within]:hover {
+  border-color: var(--brand-secondary); }
+
+.dc-input:focus-within:hover {
+  border-color: var(--brand-secondary); }
+
+.dc-input__disabled {
+  border-color: var(--general-disabled);
+  color: var(--text-disabled); }
+
+.dc-input__field {
+  background: none;
+  color: var(--text-prominent);
+  font-size: var(--text-size-xs);
+  padding: 1rem 1.2rem;
+  width: 100%;
+  height: 3.8rem;
+  display: block;
+  min-width: 0;
+  box-sizing: border-box; }
+
+.dc-input__field::-moz-placeholder {
+  line-height: 1.5;
+  opacity: 0;
+  -moz-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+
+.dc-input__field:-ms-input-placeholder {
+  line-height: 1.5;
+  opacity: 0;
+  -ms-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+
+.dc-input__field::-ms-input-placeholder {
+  line-height: 1.5;
+  opacity: 0;
+  -ms-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+
+.dc-input__field::placeholder {
+  line-height: 1.5;
+  opacity: 0;
+  transition: opacity 0.25s; }
+
+.dc-input__field--placeholder-visible::-moz-placeholder {
+  opacity: 0.2; }
+
+.dc-input__field--placeholder-visible:-ms-input-placeholder {
+  opacity: 0.2; }
+
+.dc-input__field--placeholder-visible::-ms-input-placeholder {
+  opacity: 0.2; }
+
+.dc-input__field--placeholder-visible::placeholder {
+  opacity: 0.2; }
+
+.dc-input__field:focus, .dc-input__field:disabled, .dc-input__field:not(:focus):not([value='']) {
+  outline: none; }
+
+.dc-input__field:focus ~ label, .dc-input__field:disabled ~ label, .dc-input__field:not(:focus):not([value='']) ~ label {
+  transform: translate(0, -1.8rem) scale(0.75);
+  padding: 0 4px; }
+
+.dc-input__field:disabled {
+  color: var(--text-disabled); }
+
+.dc-input__field:disabled ~ label {
+  color: var(--text-disabled); }
+
+.dc-input__field:disabled ~ svg .color1-fill {
+  fill: var(--text-disabled); }
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .dc-input__field:disabled {
+      color: var(--text-prominent); } } }
+
+.dc-input__field:focus {
+  outline: none; }
+
+.dc-input__field:focus ~ label {
+  color: var(--brand-secondary); }
+
+.dc-input__field:focus::-moz-placeholder {
+  opacity: 0.4; }
+
+.dc-input__field:focus:-ms-input-placeholder {
+  opacity: 0.4; }
+
+.dc-input__field:focus::-ms-input-placeholder {
+  opacity: 0.4; }
+
+.dc-input__field:focus::placeholder {
+  opacity: 0.4; }
+
+.dc-input__field:not(.dc-input--no-placeholder):not(:focus):not([value='']) ~ label {
+  color: var(--text-general); }
+
+.dc-input__field[type='number']::-webkit-inner-spin-button, .dc-input__field[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.dc-input__field[type='number'] {
+  -moz-appearance: textfield; }
+
+.dc-input__field[type='textarea'] {
+  height: 9.6rem;
+  border: none;
+  resize: none; }
+
+.dc-input__field[type='textarea'] ~ .dc-field-error {
+  top: 10rem; }
+
+.dc-input__field:-webkit-autofill {
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 0 30px var(--fill-normal) inset !important;
+  -webkit-text-fill-color: var(--text-prominent) !important; }
+
+.dc-input__field:-webkit-autofill:hover, .dc-input__field:-webkit-autofill:focus, .dc-input__field:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--fill-normal) inset !important; }
+
+.dc-input__leading-icon {
+  margin-left: 1rem;
+  top: 1rem;
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+  cursor: text;
+  font-size: var(--text-size-xs); }
+
+.dc-input__leading-icon.symbols {
+  top: 0.9rem; }
+
+.dc-input__leading-icon.symbols + .dc-input__field {
+  padding-left: calc(1.6rem + 15px); }
+
+.dc-input__leading-icon.symbols--usd + .dc-input__field {
+  padding-left: calc(1.6rem + 3px); }
+
+.dc-input__leading-icon.symbols--eur + .dc-input__field, .dc-input__leading-icon.symbols--gbp + .dc-input__field, .dc-input__leading-icon.symbols--eth + .dc-input__field, .dc-input__leading-icon.symbols--etc + .dc-input__field {
+  padding-left: calc(1.6rem + 4px); }
+
+.dc-input__leading-icon.symbols--btc + .dc-input__field, .dc-input__leading-icon.symbols--ltc + .dc-input__field {
+  padding-left: calc(1.6rem + 5px); }
+
+.dc-input__leading-icon.symbols--ust + .dc-input__field {
+  padding-left: calc(1.6rem + 7px); }
+
+.dc-input__leading-icon.symbols--bch + .dc-input__field {
+  padding-left: calc(1.6rem + 10px); }
+
+.dc-input__leading-icon.symbols--aud + .dc-input__field {
+  padding-left: calc(1.6rem + 15px); }
+
+.dc-input__trailing-icon {
+  margin: 0 1.2rem 0 0 !important; }
+
+.dc-input__trailing-icon .color1-fill {
+  fill: var(--text-less-prominent); }
+
+.dc-input__trailing-icon .color1-stroke {
+  fill: var(--text-less-prominent); }
+
+.dc-input__label {
+  color: var(--text-less-prominent);
+  font-size: var(--text-size-xs);
+  background-color: var(--fill-normal);
+  position: absolute;
+  pointer-events: none;
+  left: 1rem;
+  top: 1rem;
+  transition: 0.25s ease all;
+  transform-origin: top left; }
+
+.dc-input:not(.dc-input--no-placeholder)__label {
+  color: var(--text-general);
+  transition: 0.25s ease all;
+  transform: translateZ(0); }
+
+.dc-input__hint {
+  color: var(--text-less-prominent);
+  font-size: 1.2rem;
+  margin-left: 1.2rem;
+  position: absolute;
+  top: 4rem;
+  line-height: 1.5; }
+
+.dc-input__counter {
+  color: var(--text-less-prominent);
+  font-size: 1.2rem;
+  margin-left: 1.2rem;
+  position: absolute;
+  top: 4rem;
+  right: 20px; }
+
+.dc-input--no-placeholder label {
+  transform: translate(0, -1.8rem) scale(0.75);
+  color: var(--text-prominent);
+  padding: 0 4px;
+  background-color: var(--fill-normal); }
+
+.dc-input--error {
+  border-color: var(--brand-red-coral) !important; }
+
+.dc-input--error label {
+  color: var(--brand-red-coral) !important; }
+
+.dc-input__error {
+  color: var(--text-loss-danger); }
+
+.dc-password-input__visibility-icon {
+  cursor: pointer; }
+
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+.dc-field-error {
+  position: absolute;
+  top: 4rem;
+  text-align: left !important;
+  padding-top: 0.4rem;
+  padding-left: 1.2rem;
+  color: var(--brand-red-coral);
+  font-size: var(--text-size-xxs);
+  line-height: 1.25; }
+
+.dc-password-meter {
+  transition: transform 0.25s linear;
+  background: var(--status-danger);
+  transform-origin: left top;
+  z-index: 2; }
+
+.dc-password-meter, .dc-password-meter__bg {
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  height: 4px;
+  border-radius: 0 0 3px 3px;
+  width: calc(100% - 2px); }
+
+.dc-password-meter__bg {
+  z-index: 1;
+  background: var(--fill-disabled); }
+
+.dc-password-meter__container {
+  position: relative; }
+
+.dc-password-meter__container .dc-input {
+  border-radius: 4px; }
+
+.dc-password-meter__container .dc-password-meter__warning {
+  color: var(--status-warning);
+  top: 4.1rem;
+  padding-left: 1.3rem; }
+
+.dc-password-meter--weak {
+  background-color: var(--status-danger);
+  z-index: 2; }
+
+.dc-password-meter--strong {
+  background-color: var(--status-success);
+  z-index: 2; }
+
