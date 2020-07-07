@@ -1,0 +1,464 @@
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+@media (min-width: 320px) and (max-width: 767px) {
+  /** @define dc-collapsible; weak */
+  .dc-collapsible:before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    opacity: 1;
+    z-index: -1;
+    border-radius: 4px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.25s;
+    background: var(--general-section-1); }
+  .dc-collapsible--is-expanded {
+    background: transparent; }
+    .dc-collapsible--is-expanded:before {
+      opacity: 0.75; }
+  /** @define barrier; weak */
+  .barrier .draggable {
+    pointer-events: none; }
+    .barrier .draggable .price {
+      padding-left: 0; }
+      .barrier .draggable .price:after {
+        content: none; }
+  .barrier__widget {
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+    height: 4rem;
+    margin: 0 0 0.8rem;
+    background: var(--general-main-1);
+    border-radius: 4px; }
+    .barrier__widget-title {
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-transform: none;
+      color: var(--text-less-prominent);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0.8rem; }
+  .barrier__fields {
+    width: 100%; }
+    .barrier__fields-input {
+      width: 100%;
+      padding: 0;
+      font-weight: bold; }
+      .barrier__fields-input--is-offset {
+        pointer-events: none; }
+      .barrier__fields-input:focus, .barrier__fields-input:active, .barrier__fields-input:hover {
+        border: none; }
+    .barrier__fields-single {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      align-items: center; }
+    .barrier__fields .dc-tooltip {
+      width: 100%; }
+    .barrier__fields .input-wrapper__input {
+      outline: 0;
+      border: none; }
+    .barrier__fields .input-wrapper__button {
+      transform: scale(1.4);
+      stroke: var(--text-general); }
+      .barrier__fields .input-wrapper__button:hover, .barrier__fields .input-wrapper__button:active {
+        background: none; }
+  /** @define allow-equals; weak */
+  .allow-equals__subtitle {
+    font-size: 1rem;
+    font-weight: normal; }
+  .allow-equals .dc-checkbox__label {
+    font-weight: bold;
+    color: var(--text-prominent);
+    margin-right: 0.8rem; }
+  /** @define dc-toast-info; weak */
+  .dc-toast-info {
+    max-width: calc(100% - 1.6rem);
+    left: 0;
+    width: calc(100% - 3.6rem) !important;
+    top: 11rem !important; }
+    .dc-toast-info .dc-toast-error__message {
+      background: var(--status-info);
+      font-size: 1.2rem;
+      width: 100%;
+      /* iPhone SE screen height fixes due to UI space restrictions */ } }
+    @media only screen and (min-width: 320px) and (max-width: 767px) and (max-height: 580px) {
+      .dc-toast-info .dc-toast-error__message {
+        font-size: 1rem; } }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  /** @define dc-modal; weak */
+  .dc-modal__container_trade-params {
+    border-radius: 2px;
+    box-shadow: 0 16px 16px 0 var(--shadow-menu-2), 0 0 16px 0 var(--shadow-menu-2);
+    /* postcss-bem-linter: ignore */
+    /* iPhone SE screen height fixes due to UI space restrictions */ }
+    .dc-modal__container_trade-params .dc-relative-datepicker {
+      margin-top: -0.8rem;
+      max-width: 110px;
+      margin-left: auto;
+      margin-right: auto;
+      /* iPhone SE screen height fixes due to UI space restrictions */ } }
+    @media only screen and (min-width: 320px) and (max-width: 767px) and (max-height: 480px) {
+      .dc-modal__container_trade-params .dc-relative-datepicker {
+        margin-top: -4.6rem; } }
+  @media only screen and (min-width: 320px) and (max-width: 767px) and (max-height: 480px) {
+    .dc-modal__container_trade-params {
+      top: 0.4rem; } }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .dc-modal-header {
+    /* postcss-bem-linter: ignore */ }
+    .dc-modal-header--trade-params {
+      line-height: 1.4;
+      border-bottom-width: 1px;
+      /* postcss-bem-linter: ignore */ }
+      .dc-modal-header--trade-params .dc-modal-header__close {
+        padding: 0.8rem 0.8rem 0;
+        margin: 0.4rem 0.4rem 0.2rem; }
+  /** @define trade-params; weak */
+  .trade-params__error-popup {
+    top: 12rem !important;
+    opacity: 0.8;
+    z-index: 2 !important; }
+    .trade-params__error-popup--has-numpad {
+      z-index: 9999 !important;
+      top: 0.8rem !important; }
+  .trade-params__duration-tickpicker {
+    height: 328px; }
+    .trade-params__duration-tickpicker .dc-tick-picker {
+      max-width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center; }
+  .trade-params__amount-keypad {
+    width: 100%;
+    padding: 1.6rem;
+    height: auto;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* iPhone SE screen height fixes due to UI space restrictions */ }
+    .trade-params__amount-keypad .dc-numpad--is-currency,
+    .trade-params__amount-keypad .dc-numpad--is-regular {
+      max-width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 16px; }
+    .trade-params__amount-keypad .dc-numpad__increment,
+    .trade-params__amount-keypad .dc-numpad__decrement {
+      height: 48px !important; }
+      .trade-params__amount-keypad .dc-numpad__increment .dc-btn__text,
+      .trade-params__amount-keypad .dc-numpad__decrement .dc-btn__text {
+        font-size: 3rem;
+        font-weight: normal; }
+      .trade-params__amount-keypad .dc-numpad__increment[disabled] .dc-btn__text,
+      .trade-params__amount-keypad .dc-numpad__decrement[disabled] .dc-btn__text {
+        color: var(--text-disabled); }
+    .trade-params__amount-keypad .dc-numpad__number {
+      border-radius: 2.4rem;
+      background-color: var(--general-section-2);
+      width: 48px;
+      height: 48px !important;
+      font-weight: 700;
+      text-transform: none;
+      line-height: 1.75;
+      color: var(--text-prominent);
+      text-align: left !important; }
+      .trade-params__amount-keypad .dc-numpad__number .dc-btn__text {
+        font-size: 1.8rem; }
+      .trade-params__amount-keypad .dc-numpad__number--is-left-aligned {
+        padding: 0 0 0 0.2rem; }
+    .trade-params__amount-keypad .dc-numpad__bkspace .dc-numpad__number,
+    .trade-params__amount-keypad .dc-numpad__ok .dc-numpad__number {
+      height: 100% !important; }
+    .trade-params__amount-keypad .dc-numpad__bkspace .dc-numpad__number[disabled] {
+      background-color: var(--general-disabled); }
+      .trade-params__amount-keypad .dc-numpad__bkspace .dc-numpad__number[disabled] .dc-btn__text {
+        color: var(--text-disabled); } }
+  @media only screen and (min-width: 320px) and (max-width: 767px) and (max-height: 480px) {
+    .trade-params__amount-keypad {
+      transform: scale(1, 0.9);
+      transform-origin: top;
+      margin-top: -0.4rem; } }
+
+@media (min-width: 320px) and (max-width: 767px) and (min-width: 320px) and (max-width: 767px) {
+  .trade-params__header {
+    padding: 0.5rem 0; }
+    .trade-params__header-label {
+      line-height: 2rem; }
+    .trade-params__header-value {
+      line-height: 1.8rem;
+      font-size: 1.2rem; }
+      .trade-params__header-value--has-error {
+        color: var(--status-danger);
+        font-weight: bold; } }
+
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+/** @define mobile-widget */
+.mobile-widget {
+  border-radius: 4px;
+  padding: 1em 0.8rem;
+  height: 4rem;
+  background-color: var(--general-main-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0.8rem;
+  flex: 1; }
+  .mobile-widget__amount {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--text-prominent); }
+  .mobile-widget__duration {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--text-prominent); }
+  .mobile-widget__type {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--text-less-prominent); }
+  .mobile-widget__wrapper {
+    display: flex; }
+    .mobile-widget__wrapper .mobile-widget:last-child:not(:only-child) {
+      margin-left: 0.8rem;
+      flex: unset; }
+
+/** @define fieldset-minimized */
+.fieldset-minimized {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5em;
+  white-space: pre-line; }
+  .fieldset-minimized__amount {
+    grid-area: c; }
+  .fieldset-minimized__barrier1 {
+    grid-area: b; }
+  .fieldset-minimized__barrier2 {
+    grid-area: d; }
+  .fieldset-minimized__currency:before {
+    margin-right: 0.1em;
+    position: static;
+    display: inline;
+    font-size: 1em; }
+  .fieldset-minimized__basis {
+    font-weight: bold;
+    color: var(--text-prominent); }
+
