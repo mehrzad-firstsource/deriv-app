@@ -1,0 +1,272 @@
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+.dc-tabs--account-types__tabs ul {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
+
+/* @define account-types; weak */
+.account-types__intro {
+  color: var(--text-general);
+  font-size: 1.4rem;
+  line-height: 1.43;
+  margin: 2.4rem 6.2rem 2.4rem 4.8rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-types__intro {
+      margin: 2.4rem 0; } }
+
+.account-types__text-icon {
+  height: 2.2rem;
+  vertical-align: middle;
+  width: 2.2rem; }
+
+.account-types__box {
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 8px 0 var(--shadow-menu), 0 0 8px 0 var(--shadow-menu);
+  display: grid;
+  margin: 0 auto 4rem;
+  padding: 2.4rem; }
+  @media (min-width: 1024px) {
+    .account-types__box {
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
+      grid-column-gap: 2.4rem;
+      grid-template-columns: auto 1fr;
+      width: 80.8rem; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-types__box {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      grid-auto-rows: minmax(23rem, auto);
+      grid-auto-flow: row;
+      grid-gap: 1rem; } }
+  .account-types__box:first-of-type {
+    margin-top: 1.6rem; }
+
+.account-types__box-side {
+  width: 25rem; }
+
+.account-types__box-title {
+  color: var(--brand-red-coral);
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 0.8rem; }
+
+.account-types__box-description {
+  color: var(--text-general);
+  font-size: 1.4rem;
+  line-height: 1.43;
+  margin-bottom: 0.8rem; }
+
+.account-types__box-footer {
+  color: var(--text-general);
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 0.8rem; }
+
+.account-types__box-icons {
+  display: grid; }
+  @media (min-width: 1024px) {
+    .account-types__box-icons {
+      grid-auto-flow: column;
+      grid-gap: 0.8rem 1.6rem;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-types__box-icons {
+      grid-template-columns: repeat(4, 1fr); } }
+
+.account-types__box-icon {
+  height: 4.8rem;
+  width: 4.8rem; }
+
+.account-types .account-card {
+  border: 1px solid var(--border-normal);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  position: relative;
+  width: 22.7rem;
+  min-width: 22.7rem;
+  flex-shrink: 0; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-types .account-card {
+      flex-shrink: 0;
+      margin: 0 auto; } }
+  .account-types .account-card__wrapper {
+    display: flex;
+    flex: 1;
+    position: relative; }
+  .account-types .account-card__main {
+    height: 35.8rem;
+    min-width: 100%;
+    padding: 1.6rem; }
+    .account-types .account-card__main-title {
+      color: var(--text-general);
+      font-size: 1.6rem;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 0.4rem; }
+    .account-types .account-card__main-subtitle {
+      color: var(--text-general);
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 0.8rem; }
+    .account-types .account-card__main-table-container {
+      height: 14.8rem;
+      border-bottom: 1px solid var(--border-normal);
+      padding-bottom: 1.6rem;
+      margin-bottom: 1.6rem; }
+    .account-types .account-card__main-items {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 0.8rem; }
+    .account-types .account-card__main-item {
+      margin-bottom: 0.8rem; }
+      .account-types .account-card__main-item-label {
+        color: var(--text-less-prominent);
+        display: inline-block;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        white-space: nowrap;
+        width: 10.3rem; }
+      .account-types .account-card__main-item-value {
+        color: var(--text-general);
+        display: inline-block;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        white-space: nowrap;
+        width: 8rem; }
+    .account-types .account-card__main-button {
+      width: calc(100% - 32px);
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 1.6rem; }
+  .account-types .account-card__platforms-title {
+    color: var(--text-less-prominent);
+    font-size: var(--text-size-xxs);
+    line-height: 1.5;
+    margin-bottom: 0.8rem; }
+  .account-types .account-card__platforms-name {
+    font-size: var(--text-size-xxxs);
+    color: var(--text-general);
+    padding-top: 0.2rem; }
+  .account-types .account-card__platforms-icons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start; }
+  .account-types .account-card__platforms-icon {
+    cursor: pointer;
+    display: grid;
+    justify-items: center;
+    width: 6.4rem; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .dc-modal-header__title--account-types {
+    width: 100vw;
+    justify-content: center; } }
+

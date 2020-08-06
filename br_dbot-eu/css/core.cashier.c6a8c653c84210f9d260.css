@@ -1,0 +1,1318 @@
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+.on-ramp__page-header {
+  font-size: var(--text-size-s);
+  color: var(--text-general);
+  font-weight: bold;
+  line-height: 2.4rem;
+  margin-bottom: 1.7rem; }
+
+.on-ramp__provider {
+  box-shadow: 0 0.8rem 0.8rem 0 var(--shadow-drop), 0 0 0.8rem 0 var(--shadow-drop);
+  padding: 1.6rem 1.6rem 0.8rem 2.4rem;
+  border-radius: 0.8rem;
+  display: grid;
+  grid-column-gap: 3.2rem;
+  grid-template-areas: "logo name buy" "logo description buy" "logo website buy" "logo payment-icons buy";
+  grid-template-columns: 1fr 4fr 1fr; }
+  .on-ramp__provider + .on-ramp__provider {
+    margin-top: 1.6rem; }
+  .on-ramp__provider-logo {
+    align-self: center;
+    grid-area: logo;
+    grid-row: 1 / 5; }
+  .on-ramp__provider-name {
+    grid-area: name;
+    font-size: var(--text-size-s);
+    color: var(--text-general);
+    font-weight: bold;
+    line-height: 2.4rem;
+    margin-bottom: 0.8rem; }
+  .on-ramp__provider-description {
+    grid-area: description;
+    font-size: var(--text-size-xs);
+    color: var(--text-general);
+    line-height: 2rem; }
+  .on-ramp__provider-website {
+    grid-area: website;
+    font-size: var(--text-size-xs);
+    line-height: 2rem; }
+  .on-ramp__provider-payment-icons {
+    grid-area: payment-icons; }
+  .on-ramp__provider-button {
+    align-self: center;
+    grid-area: buy;
+    grid-row: 1 / 5;
+    justify-self: flex-end; }
+
+.on-ramp__popup {
+  color: var(--text-general); }
+  .on-ramp__popup-deposit {
+    text-align: center; }
+    .on-ramp__popup-deposit-intro {
+      font-size: var(--text-size-xs);
+      line-height: 2rem; }
+    .on-ramp__popup-deposit-address {
+      display: inline-flex;
+      border-radius: 4px;
+      align-self: center;
+      align-items: center;
+      padding: 1.2rem;
+      margin: 1.6rem;
+      background-color: var(--general-section-2); }
+      .on-ramp__popup-deposit-address-text {
+        cursor: pointer; }
+      .on-ramp__popup-deposit-address-icon {
+        margin-left: 0.8rem;
+        cursor: pointer; }
+      .on-ramp__popup-deposit-address .dc-popover__target {
+        margin-top: 0.1rem;
+        display: flex;
+        align-items: center; }
+  .on-ramp__popup-divider {
+    height: 2px;
+    width: 100%;
+    background-color: var(--general-section-2);
+    margin: 2.4rem 0; }
+  .on-ramp__popup-disclaimer-title {
+    font-size: var(--text-size-s);
+    font-weight: bold;
+    line-height: 2.4rem;
+    margin-bottom: 0.8rem; }
+  .on-ramp__popup-disclaimer-text {
+    font-size: var(--text-size-xs);
+    line-height: 2rem;
+    margin-bottom: 1.6rem; }
+  .on-ramp__popup-disclaimer-checkbox .dc-checkbox__box {
+    margin-left: 0; }
+  .on-ramp__popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2.4rem; }
+  .on-ramp__popup-no-deposit-address {
+    display: flex;
+    flex-direction: column; }
+    .on-ramp__popup-no-deposit-address-title {
+      font-size: var(--text-size-s);
+      font-weight: bold;
+      line-height: 2.4rem; }
+    .on-ramp__popup-no-deposit-address-text {
+      font-size: var(--text-size-xs);
+      line-height: 2rem;
+      margin-bottom: 2.4rem; }
+    .on-ramp__popup-no-deposit-address-buttons {
+      align-self: flex-end; }
+
+.on-ramp__widget-container {
+  padding: 0.8rem;
+  overflow: visible; }
+
+.dc-modal__container_on-ramp__modal > .dc-modal-body {
+  padding-top: 0.8rem; }
+
+.dc-modal__container_on-ramp__modal > .dc-modal-header__title {
+  padding-top: 2.4rem !important; }
+
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+.cashier__transferred-icon {
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */ }
+  .cashier__transferred-icon .color1-fill {
+    fill: var(--text-general); }
+  .cashier__transferred-icon .color1-stroke {
+    stroke: var(--text-general); }
+  .cashier__transferred-icon .color2-fill {
+    fill: none; }
+  .cashier__transferred-icon .color2-stroke {
+    stroke: none; }
+  .active.cashier__transferred-icon {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .active.cashier__transferred-icon .color1-fill {
+      fill: var(--text-prominent); }
+    .active.cashier__transferred-icon .color1-stroke {
+      stroke: var(--text-prominent); }
+    .active.cashier__transferred-icon .color2-fill {
+      fill: none; }
+    .active.cashier__transferred-icon .color2-stroke {
+      stroke: none; }
+  .disabled.cashier__transferred-icon {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .disabled.cashier__transferred-icon .color1-fill {
+      fill: var(--text-disabled); }
+    .disabled.cashier__transferred-icon .color1-stroke {
+      stroke: var(--text-disabled); }
+    .disabled.cashier__transferred-icon .color2-fill {
+      fill: none; }
+    .disabled.cashier__transferred-icon .color2-stroke {
+      stroke: none; }
+  .white.cashier__transferred-icon {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .white.cashier__transferred-icon .color1-fill {
+      fill: var(--text-prominent); }
+    .white.cashier__transferred-icon .color1-stroke {
+      stroke: var(--text-prominent); }
+  .border_hover_color.cashier__transferred-icon {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .border_hover_color.cashier__transferred-icon .color1-fill {
+      fill: var(--text-prominent); }
+    .border_hover_color.cashier__transferred-icon .color1-stroke {
+      stroke: var(--text-prominent); }
+  .secondary.cashier__transferred-icon {
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .secondary.cashier__transferred-icon .color1-fill {
+      fill: var(--text-less-prominent); }
+    .secondary.cashier__transferred-icon .color1-stroke {
+      stroke: var(--text-less-prominent); }
+
+/**
+ * Define Breakpoints here.
+ */
+/** @define cashier; weak */
+.cashier {
+  /** @define cashier-error */ }
+  .cashier__counter {
+    position: absolute;
+    top: 0.4rem;
+    right: -1.5rem; }
+  .cashier__content {
+    width: 100%;
+    background: var(--status-default); }
+    .cashier__content-header {
+      text-align: center;
+      margin-bottom: 3.2rem; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .cashier__content-header {
+          padding-top: 1.6rem;
+          margin-bottom: 0; } }
+  .cashier__wrapper {
+    text-align: center; }
+    @media (min-width: 1024px) {
+      .cashier__wrapper {
+        max-width: 672px; } }
+    .cashier__wrapper, .cashier__wrapper--align-left {
+      color: var(--text-general);
+      width: 100%;
+      height: 100%;
+      line-height: 1.43; }
+      .cashier__wrapper .inline-icon .color1-fill, .cashier__wrapper--align-left .inline-icon .color1-fill {
+        fill: var(--text-general); }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .cashier__wrapper, .cashier__wrapper--align-left {
+          height: inherit; } }
+    .cashier__wrapper--align-left {
+      text-align: left; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__wrapper--is-mobile {
+        width: 100vw;
+        margin-top: 4rem; }
+        .cashier__wrapper--is-mobile .dc-collapsible {
+          position: relative;
+          background-color: var(--general-section-1);
+          margin-bottom: 0.8rem;
+          transform: none;
+          width: 100%;
+          z-index: 1; }
+        .cashier__wrapper--is-mobile .cashier__wrapper {
+          width: calc(100% - 3.2rem);
+          margin: 0 1.6rem; }
+          .cashier__wrapper--is-mobile .cashier__wrapper-error {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding-top: 2.4rem; }
+        .cashier__wrapper--is-mobile .barspinner {
+          margin-top: 6rem; } }
+  .cashier__loader {
+    font-size: 1rem; }
+    .cashier__loader-wrapper {
+      display: flex;
+      height: 100%; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .cashier__loader-wrapper {
+          height: auto;
+          height: initial; } }
+  .cashier__header {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: bold;
+    color: var(--text-prominent); }
+    .cashier__header:not(.cashier__content-header) {
+      margin-bottom: 1.6rem;
+      margin-top: 1.6rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__header {
+        font-size: 1.4rem; } }
+  .cashier__form-submit {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; }
+  .cashier__form-error {
+    flex: 1;
+    margin: 2rem 5.6rem 4.4rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.33; }
+    .cashier__form-error-icon {
+      position: absolute;
+      left: -10px;
+      bottom: -15px;
+      pointer-events: none;
+      opacity: 0.07;
+      z-index: 0; }
+    .cashier__form-error-small-icon {
+      margin: 2rem 1.6rem 4.4rem 2.4rem; }
+    .cashier__form-error-wrapper {
+      display: flex;
+      margin-right: auto; }
+      .cashier__form-error-wrapper .cashier__form-error,
+      .cashier__form-error-wrapper .cashier__form-error-small-icon {
+        margin-top: 5.8rem;
+        margin-bottom: 0; }
+      .cashier__form-error-wrapper .cashier__form-error-small-icon {
+        margin-left: 0.8rem; }
+      .cashier__form-error-wrapper .cashier__form-error-icon {
+        bottom: 21rem; }
+  .cashier__form-submit-button {
+    margin: 3.2rem 0 2.4rem 2.4rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .cashier__form-submit {
+      margin: 0;
+      flex-flow: column;
+      height: unset;
+      margin-bottom: 1.6rem; }
+      .cashier__form-submit--align-end {
+        align-items: flex-end; }
+        .cashier__form-submit--align-end .cashier__form-submit-button {
+          width: unset; }
+    .cashier__form-submit-button {
+      margin: 0;
+      width: 100%; }
+    .cashier__form-error-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.8rem; }
+    .cashier__form-error {
+      margin: 0; }
+      .cashier__form-error-small-icon {
+        margin: 0;
+        margin-right: 0.8rem; } }
+  .cashier__input {
+    display: inline-block !important;
+    margin-bottom: 0 !important; }
+    .cashier__input--short {
+      width: 29rem; }
+    .cashier__input--long {
+      width: 100%; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__input {
+        margin-bottom: 3.2rem !important; } }
+  .cashier__drop-down,
+  .cashier__drop-down-wrapper .cashier__drop-down {
+    display: inline-block;
+    min-width: 20.3rem;
+    min-height: 4rem;
+    margin: 0 0 16px;
+    line-height: 1.43; }
+    .cashier__drop-down-wrapper,
+    .cashier__drop-down-wrapper .cashier__drop-down-wrapper {
+      display: flex;
+      flex-direction: column; }
+      .cashier__drop-down-wrapper .dc-select-native__placeholder,
+      .cashier__drop-down-wrapper .cashier__drop-down-wrapper .dc-select-native__placeholder {
+        background-color: var(--general-main-1); }
+    .cashier__drop-down-display,
+    .cashier__drop-down-wrapper .cashier__drop-down-display {
+      justify-content: left;
+      min-height: 4rem;
+      min-width: 20.3rem;
+      height: auto; }
+      .cashier__drop-down-display-span,
+      .cashier__drop-down-wrapper .cashier__drop-down-display-span {
+        font-size: 1.4rem;
+        text-align: left;
+        padding: 9px 36px 9px 12px;
+        text-transform: none;
+        line-height: 1.43;
+        display: flex;
+        align-items: center; }
+      .cashier__drop-down-display .cashier__drop-down-display-brackets:before,
+      .cashier__drop-down-wrapper .cashier__drop-down-display .cashier__drop-down-display-brackets:before {
+        content: '('; }
+      .cashier__drop-down-display .cashier__drop-down-display-brackets:after,
+      .cashier__drop-down-wrapper .cashier__drop-down-display .cashier__drop-down-display-brackets:after {
+        content: ')'; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .cashier__drop-down-display,
+        .cashier__drop-down-wrapper .cashier__drop-down-display {
+          min-height: auto;
+          min-width: auto; } }
+    .cashier__drop-down-items, .cashier__drop-down-label,
+    .cashier__drop-down-wrapper .cashier__drop-down-items,
+    .cashier__drop-down-wrapper .cashier__drop-down-label {
+      justify-content: left; }
+    .cashier__drop-down-label,
+    .cashier__drop-down-wrapper .cashier__drop-down-label {
+      margin: 0 1.6rem; }
+  .cashier__transferred-amount {
+    color: var(--text-profit-success);
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-top: 2.4rem;
+    margin-bottom: 2.8rem; }
+  .cashier__transferred-details {
+    margin-left: 8px;
+    margin-right: 8px;
+    vertical-align: super;
+    font-size: 1.4rem;
+    text-align: left;
+    line-height: 1.43;
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column; }
+    .cashier__transferred-details-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  .cashier__transferred-icon {
+    transform: scale(-1, 1);
+    vertical-align: middle;
+    margin: 0 1.6rem; }
+  .cashier__paragraph {
+    font-size: 1.4rem;
+    align-self: center;
+    line-height: 1.43; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__paragraph {
+        padding-left: 1.6rem;
+        padding-right: 0.8rem; }
+        .cashier__paragraph:first-child {
+          margin-top: 2.4rem; } }
+  .cashier__text {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto; }
+    .cashier__text--bold {
+      font-weight: bold; }
+    .cashier__text--right {
+      text-align: right; }
+    .cashier__text--faint {
+      color: var(--text-less-prominent); }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__text {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: left; } }
+  .cashier__tab-header-note {
+    color: var(--text-general);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 256px; }
+  .cashier__modal-tab {
+    min-width: 24rem; }
+  .cashier__success {
+    text-align: center;
+    background-color: var(--general-main-1);
+    padding: 2.4rem;
+    width: 50.4rem;
+    margin: 0 auto 3.2rem; }
+  .cashier__done-button {
+    width: 15.6rem;
+    margin-left: 0.8rem; }
+  .cashier__no-balance-icon {
+    margin-bottom: 1.6rem; }
+  .cashier__no-balance-button {
+    margin: 3.2rem auto; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .cashier__no-balance {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center; }
+      .cashier__no-balance-button {
+        width: calc(100% - 3.2rem); }
+      .cashier__no-balance-icon {
+        margin-top: 3.2rem; } }
+  .cashier__account-switch-icon {
+    box-sizing: border-box;
+    width: 299px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 auto 1rem; }
+    .cashier__account-switch-icon--light {
+      background-image: url(/br_dbot-eu/public/images/app/cashier/cashier-demo-light.svg); }
+    .cashier__account-switch-icon--dark {
+      background-image: url(/br_dbot-eu/public/images/app/cashier/cashier-demo-dark.svg); }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__account-switch-icon {
+        width: 100%;
+        margin: 2.4rem 0 0;
+        height: 320px; } }
+  .cashier__account-switch-text {
+    color: var(--text-loss-danger);
+    cursor: pointer;
+    font-weight: bold; }
+  .cashier__virtual-header {
+    font-size: 1.6rem;
+    color: var(--text-prominent);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.75;
+    margin-top: 0;
+    margin-bottom: 1.6rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__virtual-header {
+        padding-top: 2.4rem; } }
+  .cashier__confirm-header {
+    margin-top: 1.4rem;
+    margin-bottom: 2.4rem; }
+  .cashier__confirm-column-wrapper {
+    display: flex;
+    justify-content: center; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier__confirm-column-wrapper {
+        flex-direction: column; } }
+  .cashier__confirm-row {
+    width: 40rem;
+    display: flex;
+    padding: 0.8rem 0;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--general-section-1); }
+    .cashier__confirm-row > :last-child {
+      text-align: right;
+      max-width: 50%; }
+  .cashier__confirm-submit {
+    margin: 2.4rem auto;
+    width: 40rem;
+    display: flex;
+    justify-content: flex-end; }
+    .cashier__confirm-submit > :not(:first-child) {
+      margin-left: 0.8rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .cashier__confirm-row, .cashier__confirm-submit {
+      width: 100%; } }
+  .cashier-error__icon {
+    width: 6.4rem;
+    height: 6.4rem;
+    margin-bottom: 1.6rem; }
+  .cashier-error__header {
+    color: var(--text-loss-danger);
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem; }
+  .cashier-error__button {
+    margin: 3.2rem auto 1.6rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .cashier-error__button {
+        width: calc(100% - 3.2rem); } }
+  .cashier-error__footer {
+    font-size: 1.2rem; }
+
+/** @define cashier-page-wrapper */
+@media (min-width: 320px) and (max-width: 767px) {
+  .cashier-page-wrapper {
+    /* postcss-bem-linter: ignore */ }
+    .cashier-page-wrapper .dc-page-overlay__header {
+      position: fixed;
+      top: 4rem;
+      width: 100%;
+      height: 4rem; } }
+
+/** @define withdraw */
+.withdraw__header {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  line-height: 1.5; }
+
+.withdraw__header, .withdraw__text {
+  color: var(--text-general); }
+
+.withdraw__text {
+  font-size: 1.4rem; }
+
+.withdraw__verify-button {
+  margin: 3.2rem auto; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .withdraw__verify-button {
+      width: 100%; } }
+
+.withdraw__icon {
+  margin-top: 8rem;
+  margin-bottom: 1.6rem; }
+
+.withdraw__resend-button {
+  margin: 4rem auto 0; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .withdraw__resend-button {
+      width: 100%; } }
+
+.withdraw__email-sent {
+  max-width: 40rem;
+  width: 100%;
+  margin: auto; }
+  .withdraw__email-sent-title {
+    color: var(--text-general);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    line-height: 1.5; }
+    .withdraw__email-sent-title-sub {
+      font-size: 1.4rem; }
+  .withdraw__email-sent-text {
+    color: var(--text-general); }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .withdraw__email-sent {
+      width: 100%;
+      padding: 1.6rem; } }
+
+.withdraw__email-resend-text, .withdraw__email-sent-text {
+  font-size: 1.4rem;
+  line-height: 1.43; }
+
+.withdraw__email-resend {
+  margin-top: 4rem; }
+  .withdraw__email-resend-text {
+    color: var(--brand-red-coral);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .withdraw__email-resend {
+      margin-top: 1.6rem; } }
+
+/** @define payment-agent; weak */
+.payment-agent__instructions {
+  margin-top: 2.4rem;
+  display: flex; }
+  .payment-agent__instructions-section {
+    border: 1px solid var(--border-normal);
+    flex: 1;
+    padding: 1.6rem;
+    border-radius: 4px; }
+    .payment-agent__instructions-section .payment-agent__header {
+      margin-bottom: 8px;
+      text-align: center; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .payment-agent__instructions-section .payment-agent__header {
+          margin-top: 0; } }
+    @media (min-width: 1024px) {
+      .payment-agent__instructions-section:not(:first-child) {
+        margin-left: 24px;
+        margin-left: 1.6rem; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .payment-agent__instructions-section {
+        display: flex;
+        /* postcss-bem-linter: ignore */
+        /* postcss-bem-linter: ignore */ }
+        .payment-agent__instructions-section:first-child {
+          flex-direction: column;
+          align-items: flex-start; }
+        .payment-agent__instructions-section:last-child {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center; }
+          .payment-agent__instructions-section:last-child h2 {
+            margin: 0; }
+          .payment-agent__instructions-section:last-child .dc-btn {
+            margin: 0 0 0 auto;
+            padding: 0.3rem 0.8rem;
+            height: 3rem;
+            /* iPhone SE screen height fixes due to UI space restrictions */ }
+            .payment-agent__instructions-section:last-child .dc-btn__text {
+              font-size: 1.2rem; } }
+      @media only screen and (min-width: 320px) and (max-width: 767px) and (max-height: 480px) {
+        .payment-agent__instructions-section:last-child .dc-btn {
+          height: 4.8rem; }
+          .payment-agent__instructions-section:last-child .dc-btn__text {
+            width: 14rem;
+            white-space: normal; } }
+    @media (min-width: 320px) and (max-width: 767px) {
+        .payment-agent__instructions-section .cashier__paragraph {
+          padding-left: 0; } }
+  .payment-agent__instructions-button {
+    display: block;
+    margin: auto; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .payment-agent__instructions {
+      display: grid;
+      margin: 1.6rem;
+      grid-template-columns: 1fr;
+      grid-gap: 0.8rem; } }
+
+.payment-agent__list-header {
+  margin-top: 32px;
+  font-size: 1.4rem;
+  line-height: 1.43; }
+
+.payment-agent__list-selector {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1px; }
+
+.payment-agent__list-line {
+  border-bottom: 1px solid var(--general-section-1);
+  position: relative;
+  width: 80%;
+  margin-left: 20%;
+  top: -25px; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .payment-agent__list-header {
+    padding-left: 1.6rem;
+    position: relative;
+    z-index: 1; }
+  .payment-agent__list-selector {
+    margin: 0.8rem 1.6rem 3.2rem;
+    /* postcss-bem-linter: ignore */
+    /* postcss-bem-linter: ignore */ }
+    .payment-agent__list-selector .dc-input {
+      max-width: 18rem;
+      margin-left: auto; }
+    .payment-agent__list-selector .dc-select-native__placeholder {
+      background-color: var(--general-main-1); } }
+
+.payment-agent__drop-down {
+  margin-left: 8px !important;
+  width: auto !important;
+  margin-bottom: 0 !important; }
+
+.payment-agent__filter {
+  min-width: 22.8rem;
+  margin-top: 0; }
+  .payment-agent__filter-display {
+    min-height: 3.2rem;
+    min-width: 22.8rem; }
+
+.payment-agent__accordion-content-line {
+  margin-bottom: 8px; }
+  .payment-agent__accordion-content-line:first-child .payment-agent__contact {
+    color: var(--text-prominent); }
+  .payment-agent__accordion-content-line:last-child {
+    margin-bottom: 0; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .payment-agent__accordion-content-line {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+      .payment-agent__accordion-content-line:not(:first-child) {
+        color: var(--brand-red-coral); } }
+
+.payment-agent__accordion-content-icon {
+  vertical-align: middle;
+  margin-right: 12px;
+  /* postcss-bem-linter: ignore */
+  --fill-color1: var(--text-general); }
+
+.payment-agent__disclaimer {
+  background-color: var(--general-section-1);
+  margin-top: 2.4rem;
+  padding: 1.6rem;
+  font-size: 1.2rem;
+  line-height: 1.5; }
+
+.payment-agent__radio {
+  display: none; }
+  .payment-agent__radio-group {
+    display: block;
+    margin-bottom: 3.9rem; }
+  .payment-agent__radio-wrapper {
+    display: flex;
+    margin-bottom: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; }
+  .payment-agent__radio-circle {
+    border: 2px solid var(--text-general);
+    border-radius: 50%;
+    box-shadow: 0 0 1px 0 #ffffff;
+    width: 16px;
+    height: 16px;
+    transition: all 0.3s ease-in-out;
+    margin-right: 8px;
+    align-self: center;
+    display: inline-flex; }
+    .payment-agent__radio-circle--selected {
+      border-width: 4px;
+      border-color: var(--brand-red-coral); }
+
+.payment-agent__transferred-contact {
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem; }
+  .payment-agent__transferred-contact-wrapper {
+    margin: 3.2rem; }
+
+.payment-agent__contact {
+  text-decoration: none;
+  color: var(--brand-red-coral);
+  font-weight: bold; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .payment-agent__contact {
+      padding-left: 0; } }
+
+.payment-agent__explanation {
+  margin-top: -0.8rem; }
+
+.payment-agent__input {
+  width: 12.6rem !important;
+  margin-left: 8px;
+  display: inline-block !important;
+  margin-bottom: 0 !important; }
+  .payment-agent__input-field {
+    text-align: left;
+    font-size: 1.4rem;
+    padding: 10px 12px !important;
+    height: 4rem; }
+  .payment-agent__input-error {
+    white-space: nowrap; }
+
+.payment-agent__paragraph {
+  align-self: flex-start; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .payment-agent__accordion {
+    margin: 0 1.6rem; }
+    .payment-agent__accordion .dc-accordion__item {
+      font-size: 1.2rem;
+      position: relative;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent; }
+      .payment-agent__accordion .dc-accordion__item-header {
+        max-width: calc(100% - 3.2rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-right: 0; }
+        .payment-agent__accordion .dc-accordion__item-header-icon-wrapper {
+          top: 0;
+          right: 0;
+          width: 36px;
+          height: 3.4rem;
+          padding-left: 0;
+          float: unset;
+          display: flex;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid var(--general-section-1); }
+  .payment-agent__receipt {
+    margin: 0 1.6rem;
+    width: calc(100% - 3.2rem);
+    padding-top: 2.4rem; }
+    .payment-agent__receipt .cashier__header {
+      font-size: 1.6rem; }
+    .payment-agent__receipt .cashier__done-button {
+      width: 100%; }
+    .payment-agent__receipt .cashier__form-submit-button {
+      margin: 0; }
+    .payment-agent__receipt .cashier__form-submit {
+      margin: 2.4rem 0 1.6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0.8rem; }
+    .payment-agent__receipt .cashier__transferred-amount {
+      margin-bottom: 0; }
+    .payment-agent__receipt .cashier__transferred-details-wrapper {
+      display: none; }
+    .payment-agent__receipt .cashier__success {
+      width: 100%;
+      margin: 0 auto 3.2rem;
+      background-color: var(--general-main-1); }
+    .payment-agent__receipt .payment-agent__explanation {
+      padding-left: 0; }
+    .payment-agent__receipt .payment-agent__transferred-contact-wrapper {
+      margin: 0.8rem; }
+    .payment-agent__receipt .payment-agent__transferred-contact .payment-agent__contact {
+      padding-left: 0; }
+    .payment-agent__receipt .payment-agent__paragraph {
+      padding-left: 0; }
+  .payment-agent__withdrawal {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center; }
+    .payment-agent__withdrawal form {
+      width: calc(100% - 3.2rem); }
+    .payment-agent__withdrawal-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; }
+    .payment-agent__withdrawal .payment-agent__radio-wrapper {
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative; }
+      .payment-agent__withdrawal .payment-agent__radio-wrapper:first-child {
+        margin-top: 2.4rem; }
+      .payment-agent__withdrawal .payment-agent__radio-wrapper .dc-input {
+        width: 100% !important;
+        margin-left: 0;
+        margin-top: 3.2rem; }
+    .payment-agent__withdrawal .payment-agent__radio-circle {
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      left: 1.6rem; }
+    .payment-agent__withdrawal .payment-agent__radio-label {
+      position: absolute;
+      left: 3.2rem; }
+    .payment-agent__withdrawal .cashier__header {
+      margin: 2.4rem 0 1.6rem; }
+    .payment-agent__withdrawal .cashier__input {
+      width: 100%; }
+    .payment-agent__withdrawal .cashier__form-submit-button {
+      max-width: 18rem;
+      margin-left: auto; }
+    .payment-agent__withdrawal .dc-select-native__placeholder {
+      background-color: var(--general-main-1); } }
+
+/** @define account-transfer; weak */
+.account-transfer__notes {
+  text-align: left; }
+  .account-transfer__notes .account-transfer__notes-header {
+    margin-top: 0; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-transfer__notes {
+      color: var(--text-general);
+      padding: 1.6rem 0;
+      font-size: var(--text-size-xxs);
+      line-height: 1.5; } }
+
+.account-transfer__bullet {
+  background-color: var(--text-general);
+  border-radius: 100%;
+  margin-right: 0.8rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  flex: none;
+  margin-top: 0.8rem; }
+  .account-transfer__bullet-wrapper {
+    display: flex;
+    margin-bottom: 0.8rem; }
+
+.account-transfer__drop-down-wrapper .account-transfer__drop-down {
+  text-align: left;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 36rem;
+  margin: 0 auto 5.1rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-transfer__drop-down-wrapper .account-transfer__drop-down {
+      width: 100%;
+      min-width: auto;
+      margin-bottom: 2.4rem; } }
+
+.account-transfer__wrapper .account-transfer__input {
+  margin-bottom: -0.8rem !important;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 36rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .account-transfer__wrapper .account-transfer__input {
+      width: 100%;
+      min-width: auto;
+      margin-bottom: 2.6rem !important; } }
+
+.account-transfer__currency, .account-transfer__balance {
+  line-height: 1.43; }
+
+.account-transfer__currency {
+  margin: 0 0.4rem; }
+  .account-transfer__currency-icon {
+    align-self: center; }
+
+.account-transfer__balance {
+  margin-left: auto; }
+
+.account-transfer__transfer-details-from, .account-transfer__transfer-details-to {
+  display: flex;
+  align-items: center; }
+
+.account-transfer__transfer-from, .account-transfer__transfer-to {
+  text-align: left; }
+
+.account-transfer__transfer-from {
+  margin-bottom: 3.5rem;
+  margin-top: 2.5rem; }
+
+.account-transfer__transfer-to {
+  margin-bottom: 1.7rem; }
+
+.account-transfer__button {
+  margin: 4rem auto 0 0.8rem; }
+  .account-transfer__button-statement {
+    margin-right: 0.8rem; }
+
+.account-transfer__native-select {
+  margin-bottom: 2.4rem; }
+
+.account-transfer__receipt .cashier__text--bold {
+  color: var(--text-prominent); }
+
+.account-transfer__receipt .cashier__transferred-amount {
+  color: var(--text-profit-success); }
+
+@media (min-width: 1024px) {
+  .account-transfer__form-submit {
+    min-width: 36rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 2rem auto 0; } }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .account-transfer__transfer-details-from {
+    flex-flow: column-reverse; }
+  .account-transfer__transfer-details-to {
+    flex-flow: column; }
+    .account-transfer__transfer-details-to .cashier__transferred-details {
+      text-align: center; }
+  .account-transfer__receipt .cashier__header {
+    padding-top: 1.6rem;
+    margin-top: 0; }
+  .account-transfer__receipt .cashier__transferred-details {
+    margin-top: 0.8rem; }
+  .account-transfer__receipt .cashier__transferred-amount {
+    margin-bottom: 1.6rem;
+    margin-top: 0; }
+  .account-transfer__receipt .cashier__text--right {
+    text-align: center; }
+  .account-transfer__receipt-form-submit {
+    display: flex;
+    flex-flow: row;
+    justify-content: center; }
+    .account-transfer__receipt-form-submit .account-transfer__button {
+      margin: 1.6rem 0.4rem 0;
+      width: 100%; } }
+    @media only screen and (min-width: 320px) and (max-width: 767px) and (max-width: 340px) {
+      .account-transfer__receipt-form-submit .account-transfer__button .dc-btn__text {
+        font-size: 1.2rem; } }
+
+/* stylelint-disable plugin/selector-bem-pattern */
+#account_transfer_switch_modal .dc-modal-header__title {
+  padding: 2.4rem 2.4rem 0; }
+
+#account_transfer_switch_modal .dc-modal-body {
+  padding: 2.4rem; }
+
+#account_transfer_switch_modal .dc-modal-footer {
+  padding: 0 2.4rem 2.4rem; }
+
+/** @define payment-agent-transfer */
+div.payment-agent-transfer__container {
+  padding: 0 15.6rem; }
+
+div.payment-agent-transfer__input {
+  margin-bottom: 5.1rem; }
+  div.payment-agent-transfer__input-area {
+    margin-bottom: 1rem; }
+    div.payment-agent-transfer__input-area .dc-input__counter {
+      top: 9.7rem;
+      right: 0; }
+
+div.payment-agent-transfer__wrapper .cashier__transferred-details-wrapper .account-transfer__transfer-details-from {
+  flex-direction: row-reverse; }
+  div.payment-agent-transfer__wrapper .cashier__transferred-details-wrapper .account-transfer__transfer-details-from > .cashier__transferred-details {
+    text-align: right; }
+
+div.payment-agent-transfer__wrapper .cashier__transferred-details-wrapper .dc-icon {
+  width: 3.2rem;
+  height: 3.2rem; }
+
+div.payment-agent-transfer__wrapper .cashier__form-submit {
+  flex-flow: row;
+  justify-content: center; }
+  div.payment-agent-transfer__wrapper .cashier__form-submit-button {
+    margin: 0;
+    width: 100%;
+    max-width: 18rem; }
+    div.payment-agent-transfer__wrapper .cashier__form-submit-button:first-child {
+      margin-right: 0.4rem; }
+    div.payment-agent-transfer__wrapper .cashier__form-submit-button:last-child {
+      margin-left: 0.4rem; }
+
+div.payment-agent-transfer__wrapper .cashier__transferred-icon {
+  width: 1.6rem !important;
+  height: 1.6rem !important; }
+
+div.payment-agent-transfer__wrapper .cashier__success {
+  margin-bottom: 0.8rem; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  div.payment-agent-transfer__wrapper {
+    padding-top: 1.6rem; }
+    div.payment-agent-transfer__wrapper .cashier__header {
+      margin-top: 0.4rem; }
+    div.payment-agent-transfer__wrapper .cashier__form-submit-button {
+      max-width: 100%;
+      /* iPhone SE screen width fixes due to UI space restrictions */ } }
+    @media only screen and (min-width: 320px) and (max-width: 767px) and (max-width: 340px) {
+      div.payment-agent-transfer__wrapper .cashier__form-submit-button {
+        max-width: 150px; } }
+
+@media (min-width: 320px) and (max-width: 767px) {
+    div.payment-agent-transfer__wrapper .cashier__success {
+      width: 100%;
+      background-color: var(--general-main-1);
+      padding: 0.4rem 0.4rem 0.8rem;
+      margin-bottom: 1.6rem; }
+    div.payment-agent-transfer__wrapper .cashier__transferred-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+      padding: 0;
+      margin: 0.8rem 0 0; }
+      div.payment-agent-transfer__wrapper .cashier__transferred-details-wrapper .cashier__text--bold {
+        color: var(--text-prominent); }
+      div.payment-agent-transfer__wrapper .cashier__transferred-details-wrapper .account-transfer__transfer-details-from {
+        flex-direction: column;
+        padding-right: 1.6rem; }
+      div.payment-agent-transfer__wrapper .cashier__transferred-details-wrapper .account-transfer__transfer-details-to {
+        flex-direction: column;
+        padding-left: 1.6rem; }
+    div.payment-agent-transfer__wrapper .cashier__transferred-icon {
+      margin: 0; }
+  div.payment-agent-transfer__container {
+    width: calc(100% - 3.2rem);
+    margin: 0 1.6rem;
+    padding: 2.4rem 0 0; }
+    div.payment-agent-transfer__container .dc-input__field[type='textarea'] {
+      height: 11.9rem; }
+  div.payment-agent-transfer__input-container {
+    grid-template-columns: 1fr; }
+  div.payment-agent-transfer__input-area {
+    margin-bottom: 3.2rem; }
+    div.payment-agent-transfer__input-area .dc-input__counter {
+      top: 11.7rem; }
+  div.payment-agent-transfer__input:not(:first-child) {
+    margin-left: unset;
+    margin-bottom: 5.3rem; } }
+
+/* stylelint-enable plugin/selector-bem-pattern */
+

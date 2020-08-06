@@ -1,0 +1,1394 @@
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+.dc-modal__container_mt5-password-modal {
+  max-width: 424px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+  .dc-modal__container_mt5-password-modal h2 {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--text-prominent);
+    text-transform: none;
+    margin: 2.8rem 2.2rem 3.3rem;
+    max-width: 30rem; }
+  .dc-modal__container_mt5-password-modal form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em; }
+  .dc-modal__container_mt5-password-modal__description {
+    font-size: 1.2rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.25;
+    color: var(--text-prominent);
+    text-transform: none;
+    margin-top: 1em; }
+  .dc-modal__container_mt5-password-modal__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; }
+  .dc-modal__container_mt5-password-modal .dc-modal-header {
+    display: none; }
+  .dc-modal__container_mt5-password-modal .dc-input__label {
+    top: 1.2rem;
+    background-color: var(--general-main-2); }
+  .dc-modal__container_mt5-password-modal .dc-password-meter__bg {
+    background: var(--general-section-2); }
+  .dc-modal__container_mt5-password-modal .status-dialog {
+    margin-top: 3em; }
+  .dc-modal__container_mt5-password-modal .dc-password-meter__container {
+    flex-grow: 0;
+    width: 30rem;
+    margin: auto; }
+    .dc-modal__container_mt5-password-modal .dc-password-meter__container .dc-password-input__field {
+      margin-bottom: 9.7rem; }
+  .dc-modal__container_mt5-password-modal .mt5-password-field {
+    margin-bottom: 1em;
+    width: 80%; }
+  .dc-modal__container_mt5-password-modal .input-element {
+    width: 100%; }
+
+.mt5-password-modal__message {
+  max-width: 32rem;
+  margin: auto;
+  line-height: 1.43; }
+
+.dc-modal__container_top-up-virtual {
+  width: 384px;
+  min-height: 367px;
+  display: flex;
+  flex-direction: column; }
+  .dc-modal__container_top-up-virtual__body {
+    display: flex;
+    flex-direction: column;
+    padding: 4.8rem 4.2rem;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center; }
+  .dc-modal__container_top-up-virtual__description {
+    font-size: 1.2rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.25;
+    text-transform: none;
+    color: var(--text-general); }
+  .dc-modal__container_top-up-virtual--h4 {
+    font-size: 1.2rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.25;
+    text-transform: none;
+    color: var(--text-prominent); }
+  .dc-modal__container_top-up-virtual--balance {
+    font-size: 1.6rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.75;
+    line-height: 1.5;
+    color: var(--text-profit-success); }
+  .dc-modal__container_top-up-virtual--balance-descriptor {
+    font-size: 1.2rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.25;
+    color: var(--text-general); }
+
+.mt5-success-topup__heading {
+  font-size: 1.4rem;
+  color: var(--text-general);
+  font-weight: 700;
+  text-transform: none;
+  text-align: center;
+  line-height: 1.5;
+  margin: 1.6rem; }
+
+.mt5-success-topup__description p {
+  font-size: 1.2rem;
+  color: var(--text-general);
+  font-weight: 400;
+  text-transform: none;
+  text-align: center;
+  line-height: 1.25;
+  color: var(--text-general);
+  text-transform: none; }
+
+.mt5-dashboard__container .dc-popover__target {
+  display: flex; }
+
+.mt5-verification-email-sent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .mt5-verification-email-sent__title {
+    font-size: 1.6rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.75;
+    margin: 0.8rem 0; }
+    .mt5-verification-email-sent__title--sub {
+      font-size: 1.4rem;
+      margin-top: 3rem; }
+  .mt5-verification-email-sent__description {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5; }
+  .mt5-verification-email-sent__resend-button {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--brand-red-coral);
+    text-decoration: none;
+    margin: 3.2rem 0 0; }
+  .mt5-verification-email-sent .countdown {
+    margin: 0 0.4rem; }
+
+.mt5-reset-password {
+  width: 38.4rem;
+  height: 28.3rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--text-general);
+  font-weight: 400;
+  text-transform: none;
+  text-align: left;
+  line-height: 1.5;
+  color: var(--text-prominent); }
+  .mt5-reset-password__container {
+    display: grid;
+    grid-template-rows: 6rem 1fr 7rem;
+    height: 100%; }
+  .mt5-reset-password__heading {
+    font-size: 1.6rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.75;
+    margin: 1.6rem 0 0; }
+  .mt5-reset-password__hint {
+    font-size: 1.2rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.25;
+    color: var(--text-less-prominent);
+    margin-left: 1.2rem; }
+  .mt5-reset-password__password-field {
+    margin-bottom: 0.5rem; }
+  .mt5-reset-password__password-area {
+    width: 30rem; }
+  .mt5-reset-password__error {
+    display: flex;
+    width: 38.4rem;
+    height: 28.4rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 0; }
+  .mt5-reset-password__description {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.5;
+    color: var(--text-prominent);
+    margin-bottom: 2.4rem; }
+    .mt5-reset-password__description--is-centered {
+      font-size: 1.4rem;
+      color: var(--text-general);
+      font-weight: 400;
+      text-transform: none;
+      text-align: center;
+      line-height: 1.5;
+      color: var(--text-prominent);
+      max-width: 70%; }
+  .mt5-reset-password__success {
+    width: 38.4rem;
+    height: 28.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2.4rem 0 2rem; }
+
+/** @define poi-icon-row; weak */
+.poi-icon-row {
+  display: flex;
+  margin-bottom: 16px; }
+  .poi-icon-row__icon-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-less-prominent); }
+    .poi-icon-row__icon-container:not(:first-child):not(:last-child) {
+      margin: 0 40px; }
+    .poi-icon-row__icon-container p {
+      font-size: var(--text-size-xxs); }
+    .poi-icon-row__icon-container p:first-of-type {
+      line-height: 1.5;
+      margin-top: 8px;
+      font-weight: bold; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .poi-icon-row__icon-container:not(:first-child):not(:last-child) {
+        margin: 0; }
+      .poi-icon-row__icon-container .dc-icon {
+        width: 8.8rem;
+        height: auto; }
+      .poi-icon-row__icon-container p {
+        line-height: 20px; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .poi-icon-row {
+      display: grid;
+      grid-gap: 2.4rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 4rem; } }
+
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
+/* colors */
+/* alpha colors */
+/* gradient colors */
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/**
+ * Define Breakpoints here.
+ */
+/*
+*  [Work In Progress]
+*  This file is a WIP and will be broken down into different files for different components before the module is enabled
+*  Class names might change, properties and values will definitely change
+* */
+/* stylelint-disable */
+/** @define mt5-dashboard; */
+.mt5-dashboard {
+  padding: 4.8em 0;
+  max-width: 960px;
+  margin: 0 auto; }
+  .mt5-dashboard--hint {
+    font-size: 1rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.4; }
+  .mt5-dashboard__container {
+    position: relative;
+    overflow-y: auto; }
+    .mt5-dashboard__container .notification-messages {
+      position: fixed;
+      right: 16px;
+      top: 64px; }
+  .mt5-dashboard__info {
+    background: var(--fill-disabled);
+    margin-top: 2.4rem;
+    font-size: 1.4rem;
+    color: var(--text-general);
+    display: grid;
+    grid-template-columns: 0.85fr 1fr 1fr;
+    height: 56px;
+    border-radius: 4px; }
+    .mt5-dashboard__info-description, .mt5-dashboard__info-copy {
+      display: flex;
+      align-items: center; }
+    .mt5-dashboard__info-description {
+      justify-content: flex-start;
+      padding-left: 3.2rem; }
+    .mt5-dashboard__info-copy {
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--text-prominent); }
+    .mt5-dashboard__info-display {
+      padding-right: 0.8rem; }
+    .mt5-dashboard__info-label {
+      color: var(--text-general);
+      font-weight: normal;
+      padding-right: 0.4rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-dashboard__info {
+        display: flex;
+        height: 100%;
+        padding: 1.6rem;
+        flex-direction: column;
+        align-items: flex-start; }
+        .mt5-dashboard__info-copy {
+          margin: 0 0 0.8rem;
+          font-size: 1.4rem; }
+        .mt5-dashboard__info-description {
+          margin: 0.8rem 0 1.6rem; } }
+  .mt5-dashboard__welcome-message {
+    margin-bottom: 2.4em; }
+    .mt5-dashboard__welcome-message--heading {
+      font-size: 1.6rem;
+      color: var(--text-general);
+      font-weight: 700;
+      text-transform: none;
+      text-align: left;
+      line-height: 1.75;
+      color: var(--text-prominent);
+      line-height: 1.5em; }
+  .mt5-dashboard__missing-real {
+    align-items: center;
+    background-color: var(--general-section-1);
+    display: flex;
+    justify-content: space-between;
+    margin: 2.4em 0;
+    padding: 1.6rem; }
+    .mt5-dashboard__missing-real--heading {
+      color: var(--text-prominent);
+      line-height: 1.5rem;
+      font-size: 1.6rem;
+      color: var(--text-general);
+      font-weight: 700;
+      text-transform: none;
+      text-align: left;
+      line-height: 1.75; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .mt5-dashboard__missing-real--heading {
+          font-size: 1.2rem; } }
+    .mt5-dashboard__missing-real--button {
+      height: 4rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-dashboard__missing-real {
+        flex-direction: column;
+        padding: 0.8rem; }
+        .mt5-dashboard__missing-real--heading {
+          margin-bottom: 0.8rem; }
+        .mt5-dashboard__missing-real--button {
+          width: 27rem; } }
+  .mt5-dashboard__download-center {
+    border-top: 2px solid var(--general-section-1);
+    padding-top: 4rem;
+    padding-bottom: 6.8rem; }
+    .mt5-dashboard__download-center-options {
+      display: flex;
+      justify-content: center; }
+      .mt5-dashboard__download-center-options--desktop, .mt5-dashboard__download-center-options--mobile {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap; }
+      .mt5-dashboard__download-center-options--desktop-devices {
+        display: flex;
+        align-items: baseline; }
+        .mt5-dashboard__download-center-options--desktop-devices > svg:first-child {
+          margin-left: 4.3rem;
+          margin-right: 0.4rem; }
+        .mt5-dashboard__download-center-options--desktop-devices > svg:not(:last-child) {
+          margin-bottom: 1.1rem; }
+        .mt5-dashboard__download-center-options--desktop-devices a svg {
+          margin-left: 5.2rem; }
+      .mt5-dashboard__download-center-options--desktop-links {
+        display: flex; }
+      .mt5-dashboard__download-center-options--desktop-link:not(:last-child) {
+        margin-right: 0.8rem; }
+      .mt5-dashboard__download-center-options--mobile {
+        margin-left: 4.7rem; }
+        .mt5-dashboard__download-center-options--mobile-devices {
+          margin-bottom: 1.6em; }
+          .mt5-dashboard__download-center-options--mobile-devices svg:first-child {
+            margin-right: 0.8em; }
+        .mt5-dashboard__download-center-options--mobile-link:not(:first-child) {
+          margin-left: 1.6rem; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .mt5-dashboard__download-center-options--mobile {
+            margin-left: unset;
+            margin-right: unset; } }
+    .mt5-dashboard__download-center--heading {
+      font-size: 1.6rem;
+      color: var(--text-general);
+      font-weight: 700;
+      text-transform: none;
+      text-align: left;
+      line-height: 1.75;
+      color: var(--text-prominent);
+      line-height: 1.5;
+      margin-left: 2.1rem;
+      margin-bottom: 4.2rem; }
+    .mt5-dashboard__download-center--hint {
+      font-size: 1rem;
+      color: var(--text-general);
+      font-weight: 400;
+      text-transform: none;
+      text-align: left;
+      line-height: 1.4;
+      margin-top: 1.6rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-dashboard__download-center {
+        margin-bottom: 1.6rem; } }
+  .mt5-dashboard__maintenance {
+    font-size: 1.2rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.25;
+    display: flex;
+    justify-content: center;
+    margin: 2.4rem 0; }
+    .mt5-dashboard__maintenance-icon {
+      margin-right: 0.8rem;
+      margin-top: 0.2rem; }
+    .mt5-dashboard__maintenance-text {
+      text-align: left;
+      line-height: 1.67; }
+  .mt5-dashboard .notification-messages {
+    top: calc(-4.8rem + 16px); }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-dashboard {
+      margin-top: 2.4rem;
+      padding: 0 1.6rem; } }
+
+.mt5-attribute-describer {
+  font-size: 1.4rem;
+  color: var(--text-general);
+  font-weight: 700;
+  text-transform: none;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.43;
+  color: var(--text-general); }
+  .mt5-attribute-describer .counter {
+    color: var(--brand-red-coral);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.43;
+    vertical-align: top; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-attribute-describer {
+      font-size: 1.2rem; } }
+
+.mt5-compare-accounts {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+  background: inherit;
+  height: 100%;
+  position: relative; }
+  .mt5-compare-accounts__table-row {
+    grid-template-columns: var(--mt5-compare-accounts-template-columns);
+    box-shadow: inset 0 -1px 0 0 var(--general-section-1); }
+  .mt5-compare-accounts__table-row-eu {
+    grid-template-columns: 1.5fr 2fr 2fr;
+    box-shadow: inset 0 -1px 0 0 var(--general-section-1); }
+  .mt5-compare-accounts__star {
+    color: var(--brand-red-coral);
+    font-weight: bold; }
+  .mt5-compare-accounts__bullet {
+    flex: none; }
+    .mt5-compare-accounts__bullet--circle {
+      background-color: var(--text-general);
+      border-radius: 100%;
+      margin-right: 1.2rem;
+      margin-left: 0.2rem;
+      margin-top: 0.8rem;
+      width: 0.4rem;
+      height: 0.4rem; }
+    .mt5-compare-accounts__bullet--star {
+      font-size: 14px;
+      margin-right: 1rem;
+      line-height: 1.43; }
+    .mt5-compare-accounts__bullet-wrapper {
+      display: flex;
+      margin-bottom: 0.8rem;
+      line-height: 1.5; }
+  .mt5-compare-accounts .dc-table {
+    padding: 0 30px; }
+    @media (min-width: 1024px) {
+      .mt5-compare-accounts .dc-table {
+        position: absolute;
+        height: 100%; } }
+    .mt5-compare-accounts .dc-table__header {
+      border-bottom: none;
+      height: 50px; }
+    .mt5-compare-accounts .dc-table__cell, .mt5-compare-accounts .dc-table__head {
+      padding: 0.8rem; }
+      .mt5-compare-accounts .dc-table__cell--fixed, .mt5-compare-accounts .dc-table__head--fixed {
+        padding-left: 1.6rem; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .mt5-compare-accounts .dc-table__cell--fixed, .mt5-compare-accounts .dc-table__head--fixed {
+            background-color: var(--general-section-2); } }
+    .mt5-compare-accounts .dc-table__cell {
+      border-bottom: none;
+      align-items: normal;
+      padding: 1rem 0.8rem; }
+    @media (min-width: 1024px) {
+      .mt5-compare-accounts .dc-table__header {
+        background-color: var(--general-main-2); } }
+  .mt5-compare-accounts-modal__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.4rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-compare-accounts {
+      background: var(--general-section-1);
+      height: 100%;
+      font-size: 1.2rem; }
+      .mt5-compare-accounts .dc-table {
+        padding: 0;
+        height: inherit; }
+        .mt5-compare-accounts .dc-table__cell {
+          font-size: 1.2rem; }
+        .mt5-compare-accounts .dc-table__row {
+          padding: 0; }
+        .mt5-compare-accounts .dc-table__head {
+          font-size: 1.2rem;
+          border-bottom: 2px solid var(--border-disabled);
+          background-color: var(--general-section-2);
+          margin-top: -1px; }
+        .mt5-compare-accounts .dc-table__header, .mt5-compare-accounts .dc-table__row {
+          width: 150vw;
+          grid-template-columns: 1fr 1fr 1fr 1fr; } }
+
+.mt5-compare-account--hint {
+  color: var(--text-less-prominent);
+  font-size: 12px;
+  line-height: 1.5em;
+  width: 100%;
+  padding: 1.6rem 2.4rem 0.8rem 2.4rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-compare-account--hint {
+      padding: 1.6rem;
+      border-top: 2px solid var(--border-disabled); } }
+  @media (min-width: 1024px) {
+    .mt5-compare-account--hint {
+      position: absolute;
+      bottom: 0; } }
+
+.mt5-real-accounts-display,
+.mt5-demo-accounts-display {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.4em;
+  justify-content: center; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-real-accounts-display,
+    .mt5-demo-accounts-display {
+      flex-direction: column; } }
+
+.mt5-account-card {
+  border: solid 1px var(--border-normal);
+  border-radius: 4px;
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 35.8rem;
+  width: 30.4em; }
+  .mt5-account-card__logged-out {
+    min-height: 29rem; }
+  .mt5-account-card:not(:last-child) {
+    margin-right: 2.4rem; }
+  .mt5-account-card:hover {
+    box-shadow: 0 2px 8px 0 var(--shadow-menu); }
+  .mt5-account-card--heading {
+    font-size: 1.6rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.75;
+    color: var(--text-prominent);
+    line-height: 1.5em; }
+  .mt5-account-card--paragraph {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.5;
+    color: var(--text-general);
+    line-height: 1.45em; }
+  .mt5-account-card--balance {
+    font-size: 1.6rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.75;
+    line-height: 1.5;
+    margin-top: -0.4rem;
+    color: var(--text-profit-success); }
+  .mt5-account-card__banner {
+    position: relative;
+    transform: rotate(45deg);
+    border-bottom: 2.3rem solid var(--brand-red-coral);
+    border-left: 2.3rem solid transparent;
+    border-right: 2.3rem solid transparent;
+    height: 0;
+    width: 10.6rem;
+    left: 22rem;
+    top: 1.7rem;
+    color: var(--text-colored-background);
+    font-weight: bold;
+    line-height: 24px;
+    white-space: nowrap;
+    text-align: center; }
+    .mt5-account-card__banner--demo {
+      border-bottom-color: var(--brand-secondary); }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-account-card__banner {
+        left: calc(100vw - 11.6rem); } }
+  .mt5-account-card__type {
+    display: flex;
+    padding: 1.5rem 1.6rem 1.6rem; }
+    .mt5-account-card__type--description {
+      display: inline-block;
+      margin-left: 1.6em;
+      max-width: 19.2em; }
+      .mt5-account-card__type--description .mt5-account-card--heading {
+        margin-bottom: 0.8rem; }
+      .mt5-account-card__type--description .mt5-account-card--paragraph {
+        width: 18.8rem; }
+    .mt5-account-card__type--has-banner {
+      margin-top: -23px; }
+  .mt5-account-card__display {
+    display: flex;
+    flex-wrap: wrap;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    justify-content: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content; }
+    .mt5-account-card__display-text {
+      font-size: 1.6rem;
+      color: var(--text-general);
+      font-weight: 700;
+      text-transform: none;
+      text-align: center;
+      line-height: 1.75;
+      color: var(--brand-red-coral);
+      line-height: 1.5;
+      margin-top: 0.4rem; }
+      .mt5-account-card__display-text--top-right {
+        position: relative;
+        left: 22.2rem;
+        bottom: 7.2rem;
+        margin: 0; }
+    .mt5-account-card__display--fixed-height {
+      height: 64px; }
+  .mt5-account-card__clipboard {
+    margin: 0 1em; }
+  .mt5-account-card__cta {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto; }
+  .mt5-account-card__specs-table {
+    width: 100%; }
+    .mt5-account-card__specs-table-attribute .mt5-account-card--paragraph {
+      color: var(--text-general);
+      margin-right: 2.4rem; }
+    .mt5-account-card__specs-table-data .mt5-account-card--paragraph {
+      font-size: 1.4rem;
+      color: var(--text-general);
+      font-weight: 700;
+      text-transform: none;
+      text-align: left;
+      line-height: 1.5;
+      color: var(--text-prominent);
+      line-height: 1.45em; }
+  .mt5-account-card__commission {
+    text-align: center;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem; }
+    .mt5-account-card__commission.mt5-account-card--paragraph {
+      line-height: 1.4em; }
+  .mt5-account-card__account-selection {
+    align-items: center;
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    margin: 0 1.6rem 1.5rem;
+    padding: 0;
+    text-decoration: none;
+    width: 27rem;
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5; }
+    .mt5-account-card__account-selection--primary {
+      background-color: var(--brand-red-coral);
+      color: var(--text-colored-background); }
+    .mt5-account-card__account-selection--secondary {
+      background-color: transparent;
+      border: 2px solid var(--button-secondary-default);
+      color: var(--text-prominent); }
+      .mt5-account-card__account-selection--secondary:hover {
+        background-color: var(--button-secondary-hover); }
+    .mt5-account-card__account-selection--disabled {
+      background-color: var(--brand-red-coral);
+      cursor: auto;
+      cursor: initial;
+      opacity: 0.32; }
+  .mt5-account-card__login {
+    font-size: 1.6rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.75;
+    align-items: center;
+    background-color: var(--general-section-1);
+    border-radius: 4px;
+    color: var(--text-general);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin: 2.4rem 0 1.6rem;
+    width: 272px; }
+    .mt5-account-card__login strong {
+      font-weight: bold; }
+  .mt5-account-card__manage {
+    display: flex;
+    width: 272px; }
+    .mt5-account-card__manage .dc-btn {
+      width: 100%;
+      margin-bottom: 1.6rem; }
+      .mt5-account-card__manage .dc-btn:not(:last-child) {
+        margin-right: 1.6rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-account-card {
+      width: calc(100vw - 3.2rem); }
+      .mt5-account-card:not(:last-child) {
+        margin-bottom: 2.4rem;
+        margin-right: 0; } }
+
+.mt5-password-manager {
+  margin: 5.6rem auto 3.2rem;
+  max-width: calc(400px + 1rem);
+  width: 100%; }
+  .mt5-password-manager--paragraph {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.5;
+    color: var(--text-general);
+    margin-bottom: 3.2rem; }
+  .mt5-password-manager--error-message {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.5;
+    color: var(--text-loss-danger);
+    margin-bottom: 1em; }
+  .mt5-password-manager__main-form, .mt5-password-manager__investor-wrapper {
+    margin: 3.2rem 0.5rem 0; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-password-manager__main-form, .mt5-password-manager__investor-wrapper {
+        padding-bottom: 12rem; } }
+  .mt5-password-manager .dc-password-meter__container,
+  .mt5-password-manager .dc-password-input {
+    width: 30rem;
+    margin: auto; }
+  .mt5-password-manager__investor-wrapper .mt5-password-manager--paragraph:first-child {
+    margin-bottom: 0.8rem; }
+  .mt5-password-manager__investor-form {
+    width: 100%;
+    max-width: 300px;
+    margin: 2.4em auto 0; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-password-manager__investor-form {
+        max-width: unset; } }
+  .mt5-password-manager__new-password {
+    margin-bottom: 8.6rem; }
+  .mt5-password-manager__actions {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap; }
+  .mt5-password-manager--button {
+    margin-top: 1.6rem; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-password-manager--button {
+        width: 100%;
+        margin-top: 0.8rem; } }
+  .mt5-password-manager__success {
+    text-align: center;
+    margin-top: 3.2rem; }
+    .mt5-password-manager__success-header {
+      font-size: 1.4rem;
+      color: var(--text-general);
+      font-weight: 700;
+      text-transform: none;
+      text-align: center;
+      line-height: 1.5;
+      margin: 1.6rem 0 0.8rem; }
+    .mt5-password-manager__success-paragraph {
+      font-size: 1.2rem;
+      color: var(--text-general);
+      font-weight: 400;
+      text-transform: none;
+      text-align: center;
+      line-height: 1.25; }
+    .mt5-password-manager__success-btn {
+      margin-top: 3.2rem;
+      width: 6.4rem; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-password-manager {
+      padding: 0 1.6rem;
+      margin-top: 2.4rem; } }
+  .mt5-password-manager .multi-step__header {
+    margin: 0 0 2.4rem 0; }
+  .mt5-password-manager .multi-step__component {
+    text-align: center; }
+
+.mt5-financial-stp-modal {
+  display: grid;
+  grid-template-rows: 13rem minmax(10rem, 1fr);
+  height: 100%;
+  position: relative;
+  width: 100%; }
+  .mt5-financial-stp-modal__form, .mt5-financial-stp-modal__body {
+    display: grid; }
+  @media (min-width: 1024px) {
+    .mt5-financial-stp-modal {
+      overflow: hidden; }
+      .mt5-financial-stp-modal .details-form__description {
+        width: 100%;
+        text-align: center; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-financial-stp-modal {
+      overflow: auto;
+      grid-template-rows: 7rem minmax(10rem, 1fr); }
+      .mt5-financial-stp-modal__heading {
+        padding: unset; }
+      .mt5-financial-stp-modal__header-steps {
+        padding-bottom: 0.8rem;
+        width: 100%;
+        background: var(--general-section-2); }
+        .mt5-financial-stp-modal__header-steps-title {
+          color: var(--brand-red-coral);
+          font-size: 1.4rem;
+          font-weight: bold;
+          line-height: 20px;
+          padding: 1.6rem 2.4rem 0.8rem; }
+        .mt5-financial-stp-modal__header-steps-subtitle {
+          color: var(--text-prominent);
+          line-height: 18px;
+          font-size: 1.2rem;
+          font-weight: bold;
+          padding: 0 2.4rem; }
+      .mt5-financial-stp-modal .dc-form-submit-button {
+        background-color: inherit; } }
+
+.account-management__message-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.account-management__message-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 24em;
+  padding: 0 3em; }
+
+.account-management__message {
+  font-size: 1.6rem;
+  color: var(--text-general);
+  font-weight: 700;
+  text-transform: none;
+  text-align: center;
+  line-height: 1.75;
+  color: var(--text-prominent); }
+
+.account-management__text {
+  font-size: 1.4rem;
+  color: var(--text-general);
+  font-weight: 400;
+  text-transform: none;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--text-prominent); }
+
+.mt5-pending-verification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 11em;
+  margin: 12.7em 0 12em; }
+  .mt5-pending-verification__heading {
+    font-size: 1.6rem;
+    color: var(--text-general);
+    font-weight: 700;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.75;
+    color: var(--text-prominent); }
+  .mt5-pending-verification__description {
+    font-size: 1.4rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--text-prominent);
+    margin: 0.6em 0 0; }
+  .mt5-pending-verification__btn-area {
+    margin: 3.2em 0 0; }
+    .mt5-pending-verification__btn-area .btn--primary {
+      width: 90px !important;
+      height: 40px !important; }
+
+.dc-modal__container {
+  min-width: 0;
+  min-width: initial; }
+  .dc-modal__container_mt5-password-modal__description {
+    font-size: 1.2rem;
+    color: var(--text-general);
+    font-weight: 400;
+    text-transform: none;
+    text-align: left;
+    line-height: 1.25;
+    line-height: 1.5;
+    max-width: 300px;
+    margin: -2.7rem 0 0.4rem;
+    color: var(--text-less-prominent); }
+  .dc-modal__container_mt5-dashboard__compare-accounts {
+    width: 904px; }
+  .dc-modal__container_mt5-password-manager__modal {
+    height: 688px;
+    width: 904px; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mt5-details-form {
+    display: grid;
+    grid-template-rows: 7rem minmax(10rem, 1fr);
+    height: auto; } }
+
+.mt5-details-form__fields {
+  padding: 0; }
+
+.mt5-details-form .mt5-tax-identification-number {
+  margin-top: 1em; }
+
+.mt5-details-form .dc-autocomplete {
+  margin-bottom: 2.4em; }
+  .mt5-details-form .dc-autocomplete__input-field .dc-input {
+    margin-bottom: 0; }
+
+.account-poa__upload-icon {
+  width: 25px; }
+
+.account-poa__upload-section {
+  margin-top: 0em;
+  display: flex; }
+
+.account-poa__upload-list {
+  width: 100%;
+  flex: 1;
+  margin-right: 16px; }
+
+.account-poa__upload-file {
+  width: 100%;
+  flex: 1;
+  height: 240px;
+  position: relative; }
+  .account-poa__upload-file .dc-file-dropzone {
+    max-width: 400px; }
+
+.account-poa__upload-remove-btn {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  transition: transform 0.25s linear; }
+  .account-poa__upload-remove-btn:hover {
+    transform: scale(1.25, 1.25); }
+  .account-poa__upload-remove-btn--error circle {
+    fill: var(--status-danger); }
+  .account-poa__upload-remove-btn-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.account-poa__upload-box {
+  display: flex;
+  margin-bottom: 2em;
+  align-items: center;
+  justify-content: flex-start; }
+
+.account-poa__upload-item {
+  min-width: 238px;
+  width: 100%;
+  margin-left: 1em;
+  font-size: var(--text-size-xxs);
+  line-height: 1.5;
+  color: var(--text-prominent); }
+
+.mt5-proof-of-address {
+  height: 100%; }
+  .mt5-proof-of-address .details-form {
+    display: grid;
+    grid-template-rows: minmax(10rem, 1fr) 7.2rem;
+    height: 100%; }
+  .mt5-proof-of-address__file-upload {
+    position: relative; }
+    .mt5-proof-of-address__file-upload li {
+      margin: 0 0 1.5rem 0; }
+  .mt5-proof-of-address__field-area {
+    max-width: 556px;
+    margin: 0 auto; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .mt5-proof-of-address__field-area {
+        overflow: auto; } }
+  .mt5-proof-of-address__inline-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em; }
+    .mt5-proof-of-address__inline-fields .dc-dropdown-container {
+      margin-top: 0; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-proof-of-address .dc-input__label {
+      background: var(--general-section-2); }
+    .mt5-proof-of-address__field-area {
+      padding: 0 1.6rem; }
+    .mt5-proof-of-address__inline-fields {
+      display: flex;
+      flex-direction: column; }
+      .mt5-proof-of-address__inline-fields .dc-select-native {
+        margin-bottom: 3.2rem; }
+    .mt5-proof-of-address__file-upload .dc-field--error {
+      top: 50%;
+      left: 0;
+      right: unset; }
+    .mt5-proof-of-address__file-upload .account-poa__upload-section {
+      flex-direction: column; } }
+
+.mt5-proof-of-identity {
+  height: 100%;
+  overflow: auto; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .mt5-proof-of-identity__fields {
+      position: relative; } }
+  .mt5-proof-of-identity .details-form {
+    display: grid;
+    grid-template-rows: minmax(10rem, 1fr) 8.2rem;
+    height: 100%;
+    position: relative; }
+
+@media (min-width: 1024px) {
+  .dc-modal__container_mt5-financial-stp-signup-modal {
+    display: grid;
+    grid-template-rows: 6rem minmax(20rem, 1fr); } }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .dc-modal__container_mt5-financial-stp-signup-modal {
+    max-height: calc(100vh - 102px); } }
+
+.dc-modal__container_mt5-password-modal .dc-form-submit-button {
+  background-color: unset;
+  padding-bottom: 1.2rem; }
+  .dc-modal__container_mt5-password-modal .dc-form-submit-button .dc-btn:first-child {
+    margin-left: 0; }
+
+.dc-modal__container_mt5-pending-dialog .dc-modal-header__title--mt5-pending-dialog,
+.dc-modal__container_mt5-success-dialog .dc-modal-header__title--mt5-pending-dialog {
+  text-align: center;
+  margin: auto;
+  padding: 2.4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; }
+
+.dc-modal__container_mt5-pending-dialog .dc-modal-body,
+.dc-modal__container_mt5-success-dialog .dc-modal-body {
+  text-align: center;
+  padding-top: 0; }
+
+.dc-modal__container_mt5-pending-dialog .dc-modal-footer,
+.dc-modal__container_mt5-success-dialog .dc-modal-footer {
+  justify-content: center;
+  padding: 0.8rem 2rem 2.4rem; }
+  .dc-modal__container_mt5-pending-dialog .dc-modal-footer .dc-btn,
+  .dc-modal__container_mt5-success-dialog .dc-modal-footer .dc-btn {
+    min-width: 90px; }
+    .dc-modal__container_mt5-pending-dialog .dc-modal-footer .dc-btn:only-child,
+    .dc-modal__container_mt5-success-dialog .dc-modal-footer .dc-btn:only-child {
+      margin: 0; }
+    .dc-modal__container_mt5-pending-dialog .dc-modal-footer .dc-btn:first-child,
+    .dc-modal__container_mt5-success-dialog .dc-modal-footer .dc-btn:first-child {
+      margin-left: 0; }
+
+.dc-modal__container_mt5-success-dialog .success-change__icon-area {
+  width: 128px;
+  margin: 2.4rem auto 0; }
+  .dc-modal__container_mt5-success-dialog .success-change__icon-area--large .bottom-right-overlay {
+    left: 76px;
+    top: 76px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .dc-modal__container_mt5-success-dialog .success-change__icon-area--large .bottom-right-overlay {
+        left: 78px;
+        top: 58px; } }
+  .dc-modal__container_mt5-success-dialog .success-change__icon-area--xlarge .bottom-right-overlay {
+    left: 104px;
+    top: 80px; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .dc-modal__container_mt5-success-dialog .success-change__icon-area--xlarge .bottom-right-overlay {
+        left: 78px;
+        top: 74px; } }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .dc-modal__container_mt5-success-dialog .success-change__icon-area {
+      width: 96px; } }
+
+.dc-modal__container_mt5-success-dialog .dc-modal-body {
+  min-width: 384px; }
+  .dc-modal__container_mt5-success-dialog .dc-modal-body .dc-modal-header__title {
+    text-align: center;
+    margin: auto;
+    padding: 1.6rem 0 0.8rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .dc-modal__container_mt5-success-dialog .dc-modal-body {
+      min-width: calc(100vw - 3.2rem); } }
+
+.mt5-single-row {
+  display: flex;
+  justify-content: center; }
+  .mt5-single-row > div {
+    margin: 0 1.2rem; }
+
+/* stylelint-enable */
+

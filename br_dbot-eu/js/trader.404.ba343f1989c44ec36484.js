@@ -1,0 +1,27 @@
+(window["webpackJsonp_deriv_trader"] = window["webpackJsonp_deriv_trader"] || []).push([["404"],{
+
+/***/ "./Modules/Page404/Components/Page404.jsx":
+/*!************************************************!*\
+  !*** ./Modules/Page404/Components/Page404.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _deriv_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @deriv/components */ \"@deriv/components\");\n/* harmony import */ var _deriv_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_deriv_components__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _deriv_shared__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @deriv/shared */ \"@deriv/shared\");\n/* harmony import */ var _deriv_shared__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_deriv_shared__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _deriv_translations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @deriv/translations */ \"@deriv/translations\");\n/* harmony import */ var _deriv_translations__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_deriv_translations__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nvar Page404 = function Page404() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"](_deriv_components__WEBPACK_IMPORTED_MODULE_1__[\"PageError\"], {\n    header: Object(_deriv_translations__WEBPACK_IMPORTED_MODULE_3__[\"localize\"])('We couldn’t find that page'),\n    messages: [Object(_deriv_translations__WEBPACK_IMPORTED_MODULE_3__[\"localize\"])('You may have followed a broken link, or the page has moved to a new address.'), Object(_deriv_translations__WEBPACK_IMPORTED_MODULE_3__[\"localize\"])('Error Code: {{error_code}} page not found', {\n      error_code: 404\n    })],\n    redirect_url: _deriv_shared__WEBPACK_IMPORTED_MODULE_2__[\"routes\"].trade,\n    redirect_label: Object(_deriv_translations__WEBPACK_IMPORTED_MODULE_3__[\"localize\"])('Return to Trade'),\n    classNameImage: \"page-404__image\",\n    image_url: Object(_deriv_shared__WEBPACK_IMPORTED_MODULE_2__[\"getUrlBase\"])('/public/images/common/404.png')\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Page404);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9Nb2R1bGVzL1BhZ2U0MDQvQ29tcG9uZW50cy9QYWdlNDA0LmpzeC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovL0BkZXJpdi90cmFkZXIvLi9Nb2R1bGVzL1BhZ2U0MDQvQ29tcG9uZW50cy9QYWdlNDA0LmpzeD9jYzk2Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBQYWdlRXJyb3IgfSBmcm9tICdAZGVyaXYvY29tcG9uZW50cyc7XG5pbXBvcnQgeyByb3V0ZXMsIGdldFVybEJhc2UgfSBmcm9tICdAZGVyaXYvc2hhcmVkJztcblxuaW1wb3J0IHsgbG9jYWxpemUgfSBmcm9tICdAZGVyaXYvdHJhbnNsYXRpb25zJztcblxuY29uc3QgUGFnZTQwNCA9ICgpID0+IChcbiAgICA8UGFnZUVycm9yXG4gICAgICAgIGhlYWRlcj17bG9jYWxpemUoJ1dlIGNvdWxkbuKAmXQgZmluZCB0aGF0IHBhZ2UnKX1cbiAgICAgICAgbWVzc2FnZXM9e1tcbiAgICAgICAgICAgIGxvY2FsaXplKCdZb3UgbWF5IGhhdmUgZm9sbG93ZWQgYSBicm9rZW4gbGluaywgb3IgdGhlIHBhZ2UgaGFzIG1vdmVkIHRvIGEgbmV3IGFkZHJlc3MuJyksXG4gICAgICAgICAgICBsb2NhbGl6ZSgnRXJyb3IgQ29kZToge3tlcnJvcl9jb2RlfX0gcGFnZSBub3QgZm91bmQnLCB7IGVycm9yX2NvZGU6IDQwNCB9KSxcbiAgICAgICAgXX1cbiAgICAgICAgcmVkaXJlY3RfdXJsPXtyb3V0ZXMudHJhZGV9XG4gICAgICAgIHJlZGlyZWN0X2xhYmVsPXtsb2NhbGl6ZSgnUmV0dXJuIHRvIFRyYWRlJyl9XG4gICAgICAgIGNsYXNzTmFtZUltYWdlPSdwYWdlLTQwNF9faW1hZ2UnXG4gICAgICAgIGltYWdlX3VybD17Z2V0VXJsQmFzZSgnL3B1YmxpYy9pbWFnZXMvY29tbW9uLzQwNC5wbmcnKX1cbiAgICAvPlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgUGFnZTQwNDtcbiJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBRUE7QUFDQTtBQUNBO0FBQUE7QUFFQTtBQUNBO0FBRUE7QUFBQTtBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBVEE7QUFEQTtBQUNBO0FBYUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./Modules/Page404/Components/Page404.jsx\n");
+
+/***/ }),
+
+/***/ "./Modules/Page404/index.js":
+/*!**********************************!*\
+  !*** ./Modules/Page404/index.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Components_Page404_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Components/Page404.jsx */ \"./Modules/Page404/Components/Page404.jsx\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return _Components_Page404_jsx__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9Nb2R1bGVzL1BhZ2U0MDQvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9AZGVyaXYvdHJhZGVyLy4vTW9kdWxlcy9QYWdlNDA0L2luZGV4LmpzPzlkOGQiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQgZnJvbSAnLi9Db21wb25lbnRzL1BhZ2U0MDQuanN4JztcbiJdLCJtYXBwaW5ncyI6IkFBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTsiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./Modules/Page404/index.js\n");
+
+/***/ })
+
+}]);
