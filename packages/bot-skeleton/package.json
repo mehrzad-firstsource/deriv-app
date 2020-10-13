@@ -42,6 +42,7 @@
         "prettier": "^1.19.1"
     },
     "dependencies": {
+        "@deriv/deriv-api": "^1.0.7",
         "@deriv/indicators": "^1.0.0",
         "@deriv/shared": "^1.0.0",
         "@deriv/translations": "^1.0.0",
