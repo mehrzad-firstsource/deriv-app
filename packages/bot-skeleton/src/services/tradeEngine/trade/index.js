@@ -162,6 +162,8 @@ export default class TradeEngine extends Balance(Purchase(Sell(OpenContract(Prop
     }
 
     listen(n, f) {
-        this.api.events.on(n, f);
+        if (this.api.api_type === 'binary') {
+            this.api.events.on(n, f);
+        }
     }
 }
