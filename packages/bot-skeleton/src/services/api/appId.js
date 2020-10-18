@@ -1,5 +1,6 @@
 import { LiveApi } from 'binary-live-api';
 import { getLanguage } from '@deriv/translations';
+import DerivAPIBasic from '@deriv/deriv-api/dist/DerivAPIBasic';
 import AppIds from './appIdResolver';
 
 const getCustomEndpoint = () => ({
@@ -27,9 +28,24 @@ const getAppIdFallback = () => getCustomEndpoint().appId || getDefaultEndpoint()
 
 const getWebSocketURL = () => `wss://${getServerAddressFallback()}/websockets/v3`;
 
-export const generateLiveApiInstance = () =>
-    new LiveApi({
-        apiUrl: getWebSocketURL(),
-        language: getLanguage().toUpperCase(),
-        appId: getAppIdFallback(),
+const getAppId = require('@deriv/shared').getAppId;
+const getSocketURL = require('@deriv/shared').getSocketURL;
+const website_name = require('@deriv/shared').website_name;
+
+const getSocketUrl = () =>
+    `wss://${getSocketURL()}/websockets/v3?app_id=${getAppId()}&l=${getLanguage()}&brand=${website_name.toLowerCase()}`;
+
+export const generateLiveApiInstance = async api_type => {
+    if (api_type === 'binary') {
+        return new LiveApi({
+            apiUrl: getWebSocketURL(),
+            language: getLanguage().toUpperCase(),
+            appId: getAppIdFallback(),
+        });
+    }
+    const binary_socket = new WebSocket(getSocketUrl());
+    const deriv_api = await new DerivAPIBasic({
+        connection: binary_socket,
     });
+    return deriv_api;
+};

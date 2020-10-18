@@ -161,9 +161,9 @@ export default class Interpreter {
     }
 
     terminateSession() {
-        const { socket } = this.$scope.api;
-
-        if (socket.readyState === 0) {
+        const { api } = this.$scope;
+        console.log(api.readyState);
+        if (api.isReady()) {
             socket.addEventListener('open', () => this.$scope.api.disconnect());
         } else if (socket.readyState === 1) {
             this.$scope.api.disconnect();

@@ -40,6 +40,7 @@ const getType = isCandle => (isCandle ? 'candles' : 'ticks');
 
 export default class TicksService {
     constructor(api) {
+        // deriv_api updated
         this.api = api;
         this.ticks = new Map();
         this.candles = new Map();
@@ -53,19 +54,18 @@ export default class TicksService {
         this.observe();
     }
 
-    requestPipSizes() {
+    async requestPipSizes() {
         if (this.pipSizes) {
             return Promise.resolve(this.pipSizes);
         }
-
         if (!this.active_symbols_promise) {
             this.active_symbols_promise = new Promise(resolve => {
-                this.api.getActiveSymbolsBrief().then(r => {
+                // deriv_api updated
+                this.api.activeSymbols().then(r => {
                     const { active_symbols: symbols } = r;
                     this.pipSizes = symbols
                         .reduce((s, i) => s.set(i.symbol, +(+i.pip).toExponential().substring(3)), new Map())
                         .toObject();
-                    console.log(this.pipSizes);
                     resolve(this.pipSizes);
                 });
             });
@@ -85,7 +85,6 @@ export default class TicksService {
         if (style === 'candles' && this.candles.hasIn([symbol, Number(granularity)])) {
             return Promise.resolve(this.candles.getIn([symbol, Number(granularity)]));
         }
-
         return this.requestStream({ ...options, style });
     }
 
@@ -97,7 +96,6 @@ export default class TicksService {
         const key = getUUID();
 
         this.request(options).catch(e => globalObserver.emit('Error', e));
-
         if (type === 'ticks') {
             this.tickListeners = this.tickListeners.setIn([symbol, key], callback);
         } else {
@@ -156,7 +154,7 @@ export default class TicksService {
             ...(ohlcSubscriptions ? Array.from(ohlcSubscriptions.values()) : []),
             ...(tickSubscription || []),
         ];
-
+        console.log(subscription);
         Promise.all(subscription.map(id => doUntilDone(() => this.api.unsubscribeByID(id))));
 
         this.subscriptions = new Map();
@@ -189,31 +187,28 @@ export default class TicksService {
     }
 
     observe() {
-        this.api.events.on('tick', r => {
-            const {
-                tick,
-                tick: { symbol, id },
-            } = r;
-
-            if (this.ticks.has(symbol)) {
-                this.subscriptions = this.subscriptions.setIn(['tick', symbol], id);
-                this.updateTicksAndCallListeners(symbol, updateTicks(this.ticks.get(symbol), parseTick(tick)));
+        // deriv_api updated
+        this.api.onMessage().subscribe(r => {
+            console.log(r.data.msg_type);
+            if (r.data.msg_type === 'tick') {
+                const {
+                    tick,
+                    tick: { symbol, id },
+                } = r.data;
+                if (this.ticks.has(symbol)) {
+                    this.subscriptions = this.subscriptions.setIn(['tick', symbol], id);
+                    this.updateTicksAndCallListeners(symbol, updateTicks(this.ticks.get(symbol), parseTick(tick)));
+                }
             }
-        });
-
-        this.api.events.on('ohlc', r => {
-            const {
-                ohlc,
-                ohlc: { symbol, granularity, id },
-            } = r;
-
-            if (this.candles.hasIn([symbol, Number(granularity)])) {
-                this.subscriptions = this.subscriptions.setIn(['ohlc', symbol, Number(granularity)], id);
-                const address = [symbol, Number(granularity)];
-                this.updateCandlesAndCallListeners(
-                    address,
-                    updateCandles(this.candles.getIn(address), parseOhlc(ohlc))
-                );
+            if (r.data.msg_type === 'ohlc') {
+                const {
+                    ohlc,
+                    ohlc: { symbol, granularity, id },
+                } = r.data;
+                if (this.ticks.has(symbol)) {
+                    this.subscriptions = this.subscriptions.setIn(['tick', symbol], id);
+                    this.updateTicksAndCallListeners(symbol, updateTicks(this.ticks.get(symbol), parseTick(tick)));
+                }
             }
         });
     }
@@ -229,30 +224,30 @@ export default class TicksService {
         return style === 'ticks' ? this.ticks_history_promise : this.candles_promise;
     }
 
-    requestTicks(options) {
+    async requestTicks(options) {
         const { symbol, granularity, style } = options;
-
+        const request_object = {
+            subscribe: 1,
+            ticks_history: symbol,
+            adjust_start_time: 1,
+            count: 1000,
+            end: 'latest',
+            start: 1,
+            style,
+            granularity: granularity ? Number(granularity) : undefined,
+        };
         return new Promise((resolve, reject) => {
-            doUntilDone(() =>
-                this.api.getTickHistory(symbol, {
-                    subscribe: 1,
-                    end: 'latest',
-                    count: 1000,
-                    granularity: granularity ? Number(granularity) : undefined,
-                    style,
-                })
-            )
+            // deriv_api updated
+            doUntilDone(() => this.api.send(request_object))
                 .then(r => {
                     if (style === 'ticks') {
+                        console.log('here');
                         const ticks = historyToTicks(r.history);
-
                         this.updateTicksAndCallListeners(symbol, ticks);
                         resolve(ticks);
                     } else {
                         const candles = parseCandles(r.candles);
-
                         this.updateCandlesAndCallListeners([symbol, Number(granularity)], candles);
-
                         resolve(candles);
                     }
                 })
