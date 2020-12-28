@@ -2340,7 +2340,7 @@ table {
   font-style: normal;
   font-weight: normal;
   font-display: fallback;
-  src: url(/br_run-panel-overlays-footer/public/fonts/binary_symbols.woff) format("woff"); }
+  src: url(/br_Run-Panel-overlays-footer/public/fonts/binary_symbols.woff) format("woff"); }
 
 /** @define symbols */
 .symbols:before {
@@ -6101,21 +6101,21 @@ table {
     vertical-align: middle;
     margin-right: 0.5em; }
   .portfolio-card__purchase:before {
-    background-image: url(/br_run-panel-overlays-footer/public/images/app/portfolio/ic_purchase_light.svg); }
+    background-image: url(/br_Run-Panel-overlays-footer/public/images/app/portfolio/ic_purchase_light.svg); }
   .portfolio-card__indicative--price-moved-up {
     color: #39b19d; }
     .portfolio-card__indicative--price-moved-up:before {
-      background-image: url(/br_run-panel-overlays-footer/public/images/app/portfolio/ic_price_up.svg); }
+      background-image: url(/br_Run-Panel-overlays-footer/public/images/app/portfolio/ic_price_up.svg); }
   .portfolio-card__indicative--price-moved-down {
     color: #e31c4b; }
     .portfolio-card__indicative--price-moved-down:before {
-      background-image: url(/br_run-panel-overlays-footer/public/images/app/portfolio/ic_price_down.svg); }
+      background-image: url(/br_Run-Panel-overlays-footer/public/images/app/portfolio/ic_price_down.svg); }
   .portfolio-card__indicative--price-stable:before {
-    background-image: url(/br_run-panel-overlays-footer/public/images/app/portfolio/ic_price_stable_light.svg); }
+    background-image: url(/br_Run-Panel-overlays-footer/public/images/app/portfolio/ic_price_stable_light.svg); }
   .portfolio-card__indicative--no-resale {
     color: rgba(0, 0, 0, 0.04); }
     .portfolio-card__indicative--no-resale:before {
-      background-image: url(/br_run-panel-overlays-footer/public/images/app/portfolio/ic_no_resale.svg); }
+      background-image: url(/br_Run-Panel-overlays-footer/public/images/app/portfolio/ic_no_resale.svg); }
 
 /** @define chart-spot */
 .chart-spot {
